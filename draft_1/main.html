@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="//ssl.gstatic.com/docs/spreadsheets/favicon3.ico">
+    <script src="https://kit.fontawesome.com/0bb23f7c87.js" crossorigin="anonymous"></script>
+    <title>Untitled file - Google Code</title>
+</head>
+<body>
+    <header>
+        <div id="top-row">
+            <div id="group-1">
+                <a href="#" title="HTML Home"><img id="logo" src="https://cdn.iconscout.com/icon/free/png-512/google-sheets-4-569453.png" alt="Logo"></a>
+                <div id="top-left">
+                    <div id="grouping">
+                        <div id="workspace-title-container">
+                            <span id="workspace-title" spellcheck="false" contenteditable>Untitled file</span>
+                        </div>
+                        <div id="top-left-1">
+                            <div id="star-icon-container" class="icon-container" title="Star">
+                                <i class="far fa-star" id="star-icon"></i>
+                            </div>
+                            <div id="folder-icon-container" class="icon-container" title="Move">
+                                <i class="far fa-folder-open" id="folder-icon"></i>
+                            </div>
+                            <div id="cloud-icon-container" class="icon-container" title="File Status">
+                                <i class="fas fa-cloud-download-alt"></i>
+                                <p id="saved-message">Saving...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <nav>
+                        <div id="nav-buttons">
+                            <button id="file-button" class="nav-button">File</button>
+                            <button id="edit-button" class="nav-button">Edit</button>
+                            <button id="view-button" class="nav-button">View</button>
+                            <button id="tools-button" class="nav-button">Tools</button>
+                            <button id="help-button" class="nav-button">Help</button>
+                        </div>
+                        <p id="version-history-link">Last edit was 2 seconds ago</p>
+                    </nav>
+                </div>
+            </div>
+            <div id="group-2">
+                <div id="preview-container">
+                    <svg id="preview" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M5 6h16V4H5c-1.1 0-2 .9-2 2v11H1v3h11v-3H5V6zm16 2h-6c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm-1 9h-4v-7h4v7z"></path></svg>
+                </div>
+                <div id="comment-container" title="Comments">
+                    <i class="far fa-comment-dots" id="comment"></i>
+                </div>
+                <div id="collab-history-container" title="Git Versioning">
+                    <i class="fas fa-code-branch" id="collab-history"></i>
+                </div>
+                <div id="share-button" title="Share"><i class="fas fa-lock" id="lock-icon"></i> Share</div>
+                <img id="account-icon" src="https://lh3.google.com/u/1/ogw/ADGmqu_sv1m_V8MC3TMjdt1jlvkB1MpsbtUZJH3cZPfz=s32-c-mo" alt="Account Icon" title="Tanner Kopel">
+            </div>
+        </div>
+        <hr class="divider"/>
+        <div id="bottom-row">
+            <div id="bottom-group-1">
+                <div id="undo-container" title="Undo"><i class="fas fa-undo-alt" id="undo"></i></div>
+                <div id="redo-container" title="Redo"><i class="fas fa-redo-alt" id="redo"></i></div>
+                <div id="print-container" title="Print"><i class="fas fa-print" id="print"></i></div>
+                <div id="debug-container" title="Debug"><i class="fas fa-bug" id="debug"></i></div>
+                <div id="run-container" title="Run"><i class="fas fa-play" id="run"></i></div>
+            </div>
+            <span class="vertical-line"></span>
+            <div id="zoom-container" title="Zoom">
+                <div id="zoom-box">
+                    <div id="zoom-left">
+                        <input type="text" id="zoom-input" name="zoom-input" value="100%">
+                    </div>
+                    <span id="zoom-divider"></span>
+                    <div id="zoom-right">
+                        <i class="fas fa-sort-down" id="zoom-arrow-down"></i>
+                    </div>
+                </div>
+            </div>
+            <span class="vertical-line"></span>
+            <div id="bottom-group-2">
+            </div>
+        </div>
+        <hr class="divider"/>
+    </header>
+    <div id="code-area">
+        <textarea id="code-input"></textarea>
+    </div>
+    <div id="explore-container">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" height="24px" width="24px" viewBox="0 0 24 24" preserveAspectRatio="none"><path class="undefined" fill="#000000" d="M19,2 L5,2 C3.9,2 3,2.9 3,4 L3,18 C3,19.1 3.9,20 5,20 L9,20 L12,23 L15,20 L19,20 C20.1,20 21,19.1 21,18 L21,4 C21,2.9 20.1,2 19,2 L19,2 Z M13.88,12.88 L12,17 L10.12,12.88 L6,11 L10.12,9.12 L12,5 L13.88,9.12 L18,11 L13.88,12.88 L13.88,12.88 Z"></path></svg>
+        <span id="explore-title">Explore</span>
+    </div>
+    <div id="preview-inpage-container">
+        <i class="far fa-eye" id="preview-inpage"></i>
+    </div>
+</body>
+<footer style="display: none;">
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</footer>
+<script src="app.js"></script>
+</html>

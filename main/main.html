@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#ec8900">
+    <meta name="msapplication-TileColor" content="#ff7b20">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://kit.fontawesome.com/0bb23f7c87.js" crossorigin="anonymous"></script>
+    <title>Untitled file - Google Code</title>
+</head>
+<body>
+    <header>
+        <div id="top-row">
+            <div id="group-1">
+                <a href="#" title="Code Home"><img id="logo" src="google-code-logo.PNG" alt="Logo"></a>
+                <div id="top-left">
+                    <div id="grouping">
+                        <div id="workspace-title-container">
+                            <span id="workspace-title" spellcheck="false" contenteditable>Untitled project</span>
+                        </div>
+                        <div id="top-left-1">
+                            <div id="star-icon-container" class="icon-container" title="Star">
+                                <i class="far fa-star" id="star-icon"></i>
+                            </div>
+                            <div id="folder-icon-container" class="icon-container" title="Move">
+                                <i class="far fa-folder-open" id="folder-icon"></i>
+                            </div>
+                            <div id="cloud-icon-container" class="icon-container" title="File Status">
+                                <i class="fas fa-cloud-download-alt"></i>
+                                <p id="saved-message">Saving...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <nav>
+                        <div id="nav-buttons">
+                            <button id="file-button" class="nav-button">File</button>
+                            <button id="edit-button" class="nav-button">Edit</button>
+                            <button id="view-button" class="nav-button">View</button>
+                            <button id="tools-button" class="nav-button">Tools</button>
+                            <button id="help-button" class="nav-button">Help</button>
+                        </div>
+                        <p id="version-history-link">Last edit was 2 seconds ago</p>
+                    </nav>
+                </div>
+            </div>
+            <div id="group-2">
+                <div id="preview-container">
+                    <svg id="preview" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M5 6h16V4H5c-1.1 0-2 .9-2 2v11H1v3h11v-3H5V6zm16 2h-6c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm-1 9h-4v-7h4v7z"></path></svg>
+                </div>
+                <div id="comment-container" title="Comments">
+                    <i class="far fa-comment-dots" id="comment"></i>
+                </div>
+                <div id="collab-history-container" title="Git Versioning">
+                    <i class="fas fa-code-branch" id="collab-history"></i>
+                </div>
+                <div id="share-button" title="Share"><i class="fas fa-lock" id="lock-icon"></i> Share</div>
+                <img id="account-icon" src="https://lh3.google.com/u/1/ogw/ADGmqu_sv1m_V8MC3TMjdt1jlvkB1MpsbtUZJH3cZPfz=s32-c-mo" alt="Account Icon" title="Tanner Kopel">
+            </div>
+        </div>
+        <hr class="divider"/>
+    </header>
+    <main>
+        <div id="code-area">
+            <textarea id="code-input"></textarea>
+        </div>
+        <div id="right-nav-spot"></div>
+        <div id="right-nav">
+            <hr class="divider-vertical"/>
+        </div>
+        <div id="terminal-container">
+            <hr class="divider"/>
+        </div>
+    </main>
+    <div id="preview-inpage-container" title="Terminal - Work In Progress">
+        <i class="fas fa-terminal" id="preview-inpage"></i>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>

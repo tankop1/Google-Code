@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(230, 230, 230);
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#preview-container {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+#preview-area {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+}
+
+#controls-container {
+    background-color: black;
+    position: fixed;
+    bottom: 10%;
+    right: 8%;
+    border-radius: 50px;
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#controls-container svg {
+    color: darkgrey;
+    fill: darkgrey;
+    cursor: pointer;
+}
+
+#report-problem {
+    color: white;
+}
+
+#exit {
+    font-size: 2.25rem;
+    color: #0F9D58;
+    cursor: pointer;
+}
+
+#divider {
+    background-color: white;
+    height: 40%;
+    width: 1px;
+}
+
+#controls-container svg:hover {
+    color: rgb(236, 236, 236);
+    fill: rgb(236, 236, 236);
+}
+
+#controls-container input {
+    display: none;
+}

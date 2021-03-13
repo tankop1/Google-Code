@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_preview.css">
+    <script src="https://kit.fontawesome.com/0bb23f7c87.js" crossorigin="anonymous"></script>
+    <title>Practice</title>
+</head>
+<body>
+    <div id="preview-container">
+        <iframe id="preview-area"></iframe>
+    </div>
+    <div id="controls-container">
+        <input onclick="phoneClicked(); tabletClicked(); computerClicked();" type="radio" name="orientation" id="phone-input">
+        <label for="phone-input" id="phone-container">
+            <svg id="phone" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 21H7v-1h10v1zm0-3H7V6h10v12zM7 4V3h10v1H7z"></path></svg>
+        </label>
+        <input onclick="phoneClicked(); tabletClicked(); computerClicked();" type="radio" name="orientation" id="tablet-input">
+        <label for="tablet-input" id="tablet-container">
+            <svg id="tablet" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M1.01 6L1 18c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H3c-1.1 0-1.99.9-1.99 2zM21 6v12h-1V6h1zm-3 0v12H6V6h12zM4 18H3V6h1v12z"></path></svg>
+        </label>
+        <input onclick="phoneClicked(); tabletClicked(); computerClicked();" type="radio" name="orientation" id="computer-input">
+        <label for="computer-input" id="computer-container">
+            <svg id="computer" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2M4 6h16v10H4V6zm.67 13H1v2h22v-2h-3.67"></path></svg>
+        </label>
+        <span id="divider"></span>
+        <div id="report-container">
+            <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"></path><path d="M11 5h2v6h-2zm0 8h2v2h-2z"></path></svg>
+        </div>
+        <p id="exit">&times;</p>
+    </div>
+</body>
+<script src="preview.js"></script>
+</html>
