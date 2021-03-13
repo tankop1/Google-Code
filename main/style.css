@@ -50,8 +50,9 @@ header {
 }
 
 #logo {
-    width: 2.5rem;
+    width: 2.1rem;
     height: auto;
+    margin-left: 5px;
 }
 
 #workspace-title {
@@ -347,7 +348,7 @@ header {
 #preview-container {
     background-color: white;
     border-radius: 50%;
-    padding: 8px 10px;
+    padding: 6px 10px;
     cursor: pointer;
 }
 
@@ -377,7 +378,7 @@ main {
 }
 
 #right-nav {
-    height: 92.2%;
+    height: 92.3%;
     width: 300px;
     background-color: white;
     position: fixed;
@@ -390,4 +391,78 @@ main {
     width: 1px;
     background-color: lightgrey;
     border: none;
+}
+
+#terminal-container {
+    height: 0px;
+    width: 79.75%;
+    background-color: white;
+    position: fixed;
+    left: 0%;
+    bottom: 0%;
+}
+
+#terminal-top-divider {
+    margin-top: 0px;
+    margin-left: -23px;
+}
+
+@keyframes terminalUp {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: 200px;
+    }
+}
+
+@keyframes buttonUp {
+    0% {
+        bottom: 1.5%;
+    }
+    100% {
+        bottom: 215px;
+    }
+}
+
+@keyframes terminalDown {
+    0% {
+        height: 200px;
+    }
+    100% {
+        height: 0px;
+    }
+}
+
+@keyframes buttonDown {
+    0% {
+        bottom: 215px;
+    }
+    100% {
+        bottom: 1.5%;
+    }
+}
+
+.terminal-up {
+    animation-name: terminalUp;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+.button-up {
+    animation-name: buttonUp;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+.terminal-down {
+    animation-name: terminalDown;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+.button-down {
+    animation-name: buttonDown;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
 }

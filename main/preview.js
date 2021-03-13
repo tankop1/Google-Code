@@ -51,7 +51,7 @@ function computerClicked() {
 function showPreview() {
     let frame = document.getElementById('preview-area').contentWindow.document;
     frame.open();
-    frame.write('<h1 style="color: red;">Hello World!</h1>');
+    frame.write('<body style="display: flex; align-items: center; justify-content: center;"><h1 style="color: red;" id="word" onclick="changeColor()">Hello World!</h1></body><script>function changeColor() {document.getElementById("word").style.color = "blue";}</script>');
     frame.close();
 }
 

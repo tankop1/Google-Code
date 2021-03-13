@@ -110,11 +110,27 @@ starIcon.addEventListener('click', function () {
     }
 });
 
-// -------------- GET / EXPORT CODE -----------------
+// -------------- TERMINAL UP / DOWN -----------------
 
-let previewButton = document.getElementById('preview-inpage-container');
+let terminalContainer = document.getElementById('terminal-container');
+let terminalButton = document.getElementById('preview-inpage-container');
+let control = true;
 
-previewButton.addEventListener('click', function () {
-    let code = document.getElementById('code-input').value;
-    console.log(code);
+terminalButton.addEventListener('click', function () {
+
+    if (control) {
+        terminalContainer.classList.remove('terminal-down');
+        terminalButton.classList.remove('button-down');
+        terminalContainer.classList.add('terminal-up');
+        terminalButton.classList.add('button-up');
+        control = false;
+    }
+
+    else {
+        terminalContainer.classList.remove('terminal-up');
+        terminalButton.classList.remove('button-up');
+        terminalContainer.classList.add('terminal-down');
+        terminalButton.classList.add('button-down');
+        control = true;
+    }
 });
