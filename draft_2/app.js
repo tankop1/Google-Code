@@ -134,11 +134,3 @@ terminalButton.addEventListener('click', function () {
         control = true;
     }
 });
-
-// ------------------- PREVIEW BUTTON ---------------------
-
-let previewContainer = document.getElementById('preview-container');
-
-previewContainer.addEventListener('click', function () {
-    window.location.href = "preview.html";
-});

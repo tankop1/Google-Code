@@ -25,7 +25,7 @@ function tabletClicked() {
         tabletSVG.style.color = 'white';
         tabletSVG.style.fill = 'white';
         previewContainer.style.width = '768px';
-        previewContainer.style.height = '600px';
+        previewContainer.style.height = '800px';
     }
 
     else {
