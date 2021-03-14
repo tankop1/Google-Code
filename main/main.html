@@ -53,6 +53,12 @@
                 </div>
             </div>
             <div id="group-2">
+                <div id="undo-container" title="Undo">
+                    <svg id="undo" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M hhikbc"><path d="M14.1 8H7.83l2.59-2.59L9 4 4 9l5 5 1.41-1.41L7.83 10h6.27c2.15 0 3.9 1.57 3.9 3.5S16.25 17 14.1 17H7v2h7.1c3.25 0 5.9-2.47 5.9-5.5S17.35 8 14.1 8z"></path></svg>
+                </div>
+                <div id="redo-container" title="Redo">
+                    <svg id="redo" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M hhikbc"><path d="M6 13.5C6 11.57 7.75 10 9.9 10h6.27l-2.59 2.59L15 14l5-5-5-5-1.41 1.41L16.17 8H9.9C6.65 8 4 10.47 4 13.5S6.65 19 9.9 19H17v-2H9.9C7.75 17 6 15.43 6 13.5z"></path></svg>
+                </div>
                 <div id="preview-container" title="Preview">
                     <svg id="preview" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M5 6h16V4H5c-1.1 0-2 .9-2 2v11H1v3h11v-3H5V6zm16 2h-6c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm-1 9h-4v-7h4v7z"></path></svg>
                 </div>
@@ -85,13 +91,15 @@
         <div id="right-nav-spot"></div>
         <div id="right-nav">
             <div id="top-nav">
-                <a href="#" id="hierarchy-tab">Hierarchy</a>
-                <a href="#" id="presets-tab">Presets</a>
-                <hr class="right-nav-divider"/>
+                <a href="#" id="hierarchy-tab" onclick="hierarchyClicked()">Hierarchy</a>
+                <a href="#" id="presets-tab" onclick="presetsClicked()">Presets</a>
             </div>
+            <div id="top-nav-divider">
+                <span id="hierarchy-underline"></span><span id="presets-underline"></span>
+            </div>
+            <hr id="top-nav-divider-line"/>
         </div>
         <div id="terminal-container">
-            <hr class="divider" id="terminal-top-divider"/>
         </div>
     </main>
     <div id="preview-inpage-container" title="Terminal - Work In Progress">
@@ -99,4 +107,6 @@
     </div>
 </body>
 <script src="app.js"></script>
+<script src="undoRedo.js"></script>
+<script src="compile.js"></script>
 </html>

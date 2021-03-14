@@ -18,8 +18,8 @@ document.addEventListener('click', function(event) {
 
         workspaceTitle.style.border = 'none';
 
-        if (workspaceTitle.innerText === '' || workspaceTitle.innerText === 'Untitled file') {
-            workspaceTitle.innerText = 'Untitled file';
+        if (workspaceTitle.innerText === '' || workspaceTitle.innerText === 'Untitled project') {
+            workspaceTitle.innerText = 'Untitled project';
             workspaceTitle.style.color = 'rgb(120, 120, 120)';
             document.title = workspaceTitle.innerText + ' - Google Code';
         }
@@ -41,7 +41,7 @@ workspaceTitle.addEventListener('click', function () {
 
 // Detirmines text color on input
 workspaceTitle.addEventListener('input', function () {
-    if (workspaceTitle.innerText === 'Untitled file') {
+    if (workspaceTitle.innerText === 'Untitled project') {
         workspaceTitle.style.color = 'rgb(125, 125, 125)';
     }
     else {
@@ -55,8 +55,8 @@ workspaceTitle.addEventListener('keydown', (evt) => {
         evt.preventDefault();
         workspaceTitle.style.border = 'none';
 
-        if (workspaceTitle.innerText === '' || workspaceTitle.innerText === 'Untitled file') {
-            workspaceTitle.innerText = 'Untitled file';
+        if (workspaceTitle.innerText === '' || workspaceTitle.innerText === 'Untitled project') {
+            workspaceTitle.innerText = 'Untitled project';
             workspaceTitle.style.color = 'rgb(120, 120, 120)';
             document.title = workspaceTitle.innerText + ' - Google Code';
         }
@@ -142,3 +142,45 @@ let previewContainer = document.getElementById('preview-container');
 previewContainer.addEventListener('click', function () {
     window.location.href = "preview.html";
 });
+
+// ------------------ CODE INPUT BOX ---------------------
+
+let codeInput = document.getElementById('code-input');
+
+codeInput.addEventListener('keydown', function(e) {
+    if (e.key == 'Tab') {
+      e.preventDefault();
+      var start = this.selectionStart;
+      var end = this.selectionEnd;
+  
+      // set textarea value to: text before caret + tab + text after caret
+      this.value = this.value.substring(0, start) +
+        '&nbsp;' + this.value.substring(end);
+  
+      // put caret at right position again
+      this.selectionStart =
+        this.selectionEnd = start + 1;
+    }
+  }); // This function was taken from www.stackoverflow.com
+
+
+// ----------------- RIGHT NAVIGATION TABS -----------------
+
+let hierarchyTab = document.getElementById('hierarchy-tab');
+let presetsTab = document.getElementById('presets-tab');
+let hierarchyUnderline = document.getElementById('hierarchy-underline');
+let presetsUnderline = document.getElementById('presets-underline');
+
+function hierarchyClicked() {
+    hierarchyTab.style.color = '#FF914D';
+    hierarchyUnderline.style.backgroundColor = '#FF914D';
+    presetsTab.style.color = 'rgb(95, 95, 95)';
+    presetsUnderline.style.backgroundColor = 'white';
+}
+
+function presetsClicked() {
+    hierarchyTab.style.color = 'rgb(95, 95, 95)';
+    hierarchyUnderline.style.backgroundColor = 'white';
+    presetsTab.style.color = '#FF914D';
+    presetsUnderline.style.backgroundColor = '#FF914D';
+}

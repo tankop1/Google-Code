@@ -67,7 +67,7 @@ header {
 }
 
 #workspace-title:hover {
-    outline: 1px solid lightgrey;
+    outline: .5px solid lightgrey;
 }
 
 #grouping {
@@ -82,7 +82,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 22%;
+    width: 450px;
 }
 
 #share-button {
@@ -331,7 +331,7 @@ header {
     padding: 9px;
     position: fixed;
     bottom: 1.5%;
-    right: 22%;
+    right: 18%;
     border: 1px solid rgb(177, 177, 177);
     border-radius: 5px;
     box-shadow: 0.5px 0.5px 2px rgb(177, 177, 177);
@@ -354,7 +354,7 @@ header {
     background-color: rgb(240, 240, 240);
 }
 
-#comment, #collab-history, #preview {
+#comment, #collab-history, #preview, #undo, #redo {
     color: rgb(95, 95, 95);
     fill: rgb(95, 95, 95);
 }
@@ -373,17 +373,17 @@ main {
 
 #right-nav-spot {
     height: 100%;
-    width: 400px;
+    width: 320px;
 }
 
 #right-nav {
     height: 92.3%;
-    width: 300px;
+    width: 250px;
     background-color: white;
     position: fixed;
     right: 0%;
     bottom: 0%;
-    border-left: 1px solid rgb(177, 177, 177);
+    border-left: 1px solid rgb(199, 199, 199);
 }
 
 .divider-vertical {
@@ -395,11 +395,12 @@ main {
 
 #terminal-container {
     height: 0px;
-    width: 80%;
+    width: 83.3%;
     background-color: white;
     position: fixed;
     left: 0%;
     bottom: 0%;
+    border-top: 1px solid rgb(177, 177, 177);
 }
 
 #terminal-top-divider {
@@ -478,6 +479,43 @@ main {
 #hierarchy-tab, #presets-tab {
     color: rgb(95, 95, 95);
     text-decoration: none;
-    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
     width: max-content;
+    font-weight: bold;
+}
+
+#hierarchy-tab:hover, #presets-tab:hover {
+    color: black;
+}
+
+#undo-container, #redo-container {
+    border-radius: 50%;
+    padding: 7px 10px;
+    cursor: pointer;
+}
+
+#undo-container:hover, #redo-container:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+#hierarchy-underline, #presets-underline {
+    height: 3px;
+    width: 50px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #FF914D;
+}
+
+#presets-underline {
+    width: 40px;
+    background-color: white;
+}
+
+#top-nav-divider-line {
+    border: .5px solid rgb(199, 199, 199);
+}
+
+#top-nav-divider {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
 }
