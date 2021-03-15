@@ -155,7 +155,7 @@ codeInput.addEventListener('keydown', function(e) {
   
       // set textarea value to: text before caret + tab + text after caret
       this.value = this.value.substring(0, start) +
-        '&nbsp;' + this.value.substring(end);
+        '\t' + this.value.substring(end);
   
       // put caret at right position again
       this.selectionStart =

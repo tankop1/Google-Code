@@ -483,8 +483,8 @@ main {
     font-weight: bold;
 }
 
-#hierarchy-tab:hover, #presets-tab:hover {
-    color: black;
+#hierarchy-tab {
+    color: #FF914D;
 }
 
 #undo-container, #redo-container {
