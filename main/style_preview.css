@@ -45,20 +45,21 @@ body {
     border: 1px solid darkgray;
 }
 
-#controls-container svg {
+#tablet, #phone, #report-problem {
     color: darkgrey;
     fill: darkgrey;
     cursor: pointer;
-}
-
-#report-problem {
-    color: white;
 }
 
 #exit {
     font-size: 2.25rem;
     color: #FF914D;
     text-decoration: none;
+}
+
+#computer {
+    fill: white;
+    cursor: pointer;
 }
 
 #divider {

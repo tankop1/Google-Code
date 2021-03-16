@@ -1,6 +1,7 @@
 // ------------- WORKSPACE TITLE JAVASCRIPT --------------
 
 let workspaceTitle = document.getElementById('workspace-title');
+let projectItem = document.getElementById('project-item');
 
 // Function for selecting / highlighting text
 function selectElementContents(el) {
@@ -22,10 +23,12 @@ document.addEventListener('click', function(event) {
             workspaceTitle.innerText = 'Untitled project';
             workspaceTitle.style.color = 'rgb(120, 120, 120)';
             document.title = workspaceTitle.innerText + ' - Google Code';
+            projectItem.innerText = workspaceTitle.innerText;
         }
 
         else {
             document.title = workspaceTitle.innerText + ' - Google Code';
+            projectItem.innerText = workspaceTitle.innerText;
         }
 
         workspaceTitle.style.padding = '1px 6px';
@@ -59,10 +62,12 @@ workspaceTitle.addEventListener('keydown', (evt) => {
             workspaceTitle.innerText = 'Untitled project';
             workspaceTitle.style.color = 'rgb(120, 120, 120)';
             document.title = workspaceTitle.innerText + ' - Google Code';
+            projectItem.innerText = workspaceTitle.innerText;
         }
 
         else {
             document.title = workspaceTitle.innerText + ' - Google Code';
+            projectItem.innerText = workspaceTitle.innerText;
         }
 
         workspaceTitle.style.padding = '1px 6px';
@@ -155,13 +160,13 @@ codeInput.addEventListener('keydown', function(e) {
   
       // set textarea value to: text before caret + tab + text after caret
       this.value = this.value.substring(0, start) +
-        '\t' + this.value.substring(end);
+        "\t" + this.value.substring(end);
   
       // put caret at right position again
       this.selectionStart =
         this.selectionEnd = start + 1;
     }
-  }); // This function was taken from www.stackoverflow.com
+}); // This function was taken from www.stackoverflow.com
 
 
 // ----------------- RIGHT NAVIGATION TABS -----------------
@@ -183,4 +188,35 @@ function presetsClicked() {
     hierarchyUnderline.style.backgroundColor = 'white';
     presetsTab.style.color = '#FF914D';
     presetsUnderline.style.backgroundColor = '#FF914D';
+}
+
+
+// ----------------- HIERARCHY TREE COLLAPSE -------------------
+
+let carrots = document.querySelectorAll('.fa-chevron-down');
+/*let carrotsUp = document.querySelectorAll('.fa-chevron-up');
+let carrots = carrotsDown + carrotsUp;*/
+
+function inArray(item, array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === item) {
+            return true;
+        }
+    }
+    return false;
+}
+
+console.log(carrots);
+
+for (let i = 0; i < carrots.length; i++) {
+    carrots[i].addEventListener('click', function () {
+        if (inArray('fa-chevron-down', carrots[i].classList)) {
+            carrots[i].classList.remove('fa-chevron-down');
+            carrots[i].classList.add('fa-chevron-up');
+        }
+        else {
+            carrots[i].classList.remove('fa-chevron-up');
+            carrots[i].classList.add('fa-chevron-down');
+        }
+    });
 }

@@ -189,7 +189,7 @@ header {
 #comment-container {
     background-color: white;
     border-radius: 50%;
-    padding: 12px 15px;
+    padding: 12px 14px;
     cursor: pointer;
 }
 
@@ -204,21 +204,21 @@ header {
 #code-area {
     display: flex;
     justify-content: center;
-    width: 108%;
+    width: 115%;
     overflow: auto;
     height: 100%;
-    padding-top: 42.5px;
 }
 
 #code-input {
     resize: none;
     width: 100%;
-    height: 95vh;
+    height: 80vh;
     outline: none;
     border: none;
-    box-shadow: 0.5px 0.5px 6px rgb(177, 177, 177);
     padding: 45px;
     background-color: rgb(245, 245, 245);
+    font-family: "Lucida Grande",Verdana;
+    font-size: .85rem;
 }
 
 #top-row {
@@ -373,7 +373,7 @@ main {
 
 #right-nav-spot {
     height: 100%;
-    width: 320px;
+    width: 530px;
 }
 
 #right-nav {
@@ -510,7 +510,7 @@ main {
     background-color: white;
 }
 
-#top-nav-divider-line {
+.top-nav-divider-line {
     border: .5px solid rgb(199, 199, 199);
 }
 
@@ -518,4 +518,147 @@ main {
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
+}
+
+#hierarchy-controls {
+    width: 95%;
+    padding-top: 15px;
+    margin-left: 5px;
+}
+
+#controls-row-1, #controls-row-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 95px;
+    width: 100%;
+}
+
+#controls-row-2 {
+    margin-left: 3px;
+}
+
+#hierarchy-controls div div {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 60px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+#hierarchy-controls div div i {
+    /*color: rgb(95, 95, 95);*/
+    transform: scale(1.5);
+    width: max-content;
+}
+
+.fa-css3 {
+    color: rgb(71, 71, 212);
+}
+
+.fa-js-square {
+    color: rgb(224, 224, 26);
+}
+
+.fa-html5 {
+    color: rgb(214, 99, 84);
+}
+
+#folder-icon {
+    color: rgb(95, 95, 95);
+}
+
+.control-title {
+    font-size: .9rem;
+    color: rgb(95, 95, 95);
+}
+
+#hierarchy-controls div div:hover .control-title {
+    color: black;
+}
+
+#hierarchy-controls div div:active {
+    background-color: rgb(240, 240, 240);
+}
+
+
+#add-js-container {
+    padding: 8px 20px !important;
+}
+
+#divider-2 {
+    margin-top: 10px;
+}
+
+#hierarchy-tree {
+    padding: 20px;
+    font-size: .875rem;
+    color: rgb(95, 95, 95);
+}
+
+.item-container {
+    padding: 5px 10px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.item {
+    padding-left: 10px;
+}
+
+.fa-chevron-down, .fa-chevron-up {
+    cursor: pointer;
+}
+
+#left-screen {
+    height: 84.7%;
+    width: 100%;
+}
+
+#tabs {
+    background-color: rgb(199, 199, 199);
+    border-top: none;
+    height: 4.5vh;
+    width: 115%;
+    display: flex;
+    align-items: center;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 11%;
+    padding: 8px;
+    cursor: pointer;
+    height: 100%;
+}
+
+.tab-title {
+    color: rgb(95, 95, 95);
+}
+
+.tab-selected {
+    background-color: rgb(245, 245, 245);
+}
+
+.tab-exit {
+    font-size: 1.3rem;
+}
+
+.open-closePreset {
+    color: blue;
+}
+
+.tag-namePreset {
+    color: green;
+}
+
+.attribute-namePreset {
+    color: red;
 }
