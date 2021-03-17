@@ -693,6 +693,87 @@ main {
     width: 1px;
 }
 
+#presets-tab-contents {
+    display: none;
+}
+
+#favicon-preset-container {
+    padding: 15px 20px;
+    margin-top: 10px;
+}
+
+#favicon-preset-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#favicon-preset-title {
+    color: rgb(95, 95, 95);
+}
+
+#favicon-preset-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 193px;
+    margin: 0 auto;
+}
+
+#favicon-file {
+    display: none;
+}
+
+#favicon-file-label {
+    background-color: #FF914D;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 80px;
+}
+
+#favicon-img {
+    width: 30px;
+    height: auto;
+}
+
+#favicon-file-upload {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+}
+
+#favicon-img-display {
+    border: 2px solid rgb(95, 95, 95);
+    height: 75px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(95, 95, 95);
+    font-size: .7rem;
+}
+
+#favicon-default-text {
+    width: 70px;
+    text-align: center;
+}
+
+#favicon-img-display-img {
+    display: none;
+}
+
+#favicon-filename {
+    font-size: .8rem;
+    color:rgb(95, 95, 95);
+    text-align: center;
+}
+
 .open-closePreset {
     color: blue;
 }

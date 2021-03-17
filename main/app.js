@@ -175,12 +175,16 @@ let hierarchyTab = document.getElementById('hierarchy-tab');
 let presetsTab = document.getElementById('presets-tab');
 let hierarchyUnderline = document.getElementById('hierarchy-underline');
 let presetsUnderline = document.getElementById('presets-underline');
+let hierarchyContents = document.getElementById('hierarchy-tab-contents');
+let presetsContents = document.getElementById('presets-tab-contents');
 
 function hierarchyClicked() {
     hierarchyTab.style.color = '#FF914D';
     hierarchyUnderline.style.backgroundColor = '#FF914D';
     presetsTab.style.color = 'rgb(95, 95, 95)';
     presetsUnderline.style.backgroundColor = 'white';
+    presetsContents.style.display = 'none';
+    hierarchyContents.style.display = 'block';
 }
 
 function presetsClicked() {
@@ -188,6 +192,8 @@ function presetsClicked() {
     hierarchyUnderline.style.backgroundColor = 'white';
     presetsTab.style.color = '#FF914D';
     presetsUnderline.style.backgroundColor = '#FF914D';
+    presetsContents.style.display = 'block';
+    hierarchyContents.style.display = 'none';
 }
 
 
@@ -226,6 +232,7 @@ for (let i = 0; i < carrots.length; i++) {
 
 
 // ---------------- HIERARCHY ITEM CLICK ------------------
+
 let indexTab = document.getElementById('index-tab');
 let styleTab = document.getElementById('style-tab');
 let appTab = document.getElementById('app-tab');
@@ -280,4 +287,45 @@ for (let i = 0; i < tabExits.length; i++) {
             }
         }
     });
+}
+
+// --------------- FAVICON PRESET FUNCTIONALITY ----------------
+
+function previewFile() {
+    let preview = document.getElementById('favicon-img-display-img');
+    let file = document.getElementById('favicon-file').files[0];
+    let reader = new FileReader();
+  
+    reader.onloadend = function () {
+        changeStyle();
+        preview.src = reader.result;
+    }
+  
+    if (file) {
+        reader.readAsDataURL(file);
+    } else {
+        preview.src = "";
+    }
+} // This function was taken from www.stackoverflow.com
+
+function split(code) {
+    let chars = [];
+    for (let i = 0; i < code.length; i++) {
+        chars.push(code[i]);
+    }
+    return chars;
+}
+
+function changeStyle() {
+    let imgPreviewContainer = document.getElementById('favicon-img-display');
+    let preview = document.getElementById('favicon-img-display-img');
+    let defaultText = document.getElementById('favicon-default-text');
+    let faviconFilename = document.getElementById('favicon-filename');
+    let filenameArray = split(document.getElementById('favicon-file').files[0].name);
+
+    imgPreviewContainer.style.border = 'none';
+    preview.style.display = 'block';
+    defaultText.style.display = 'none';
+    faviconFilename.innerHTML = 'Favicon ready';
+    faviconFilename.style.color = 'green';
 }

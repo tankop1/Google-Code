@@ -122,46 +122,80 @@
                 <span id="hierarchy-underline"></span><span id="presets-underline"></span>
             </div>
             <hr class="top-nav-divider-line"/>
-            <div id="hierarchy-controls">
-                <div id="controls-row-1">
-                    <div id="add-html-container" title="Add HTML">
-                        <i class="fab fa-html5" id="html-icon"></i>
-                        <p class="control-title">Add HTML</p>
+            <div id="hierarchy-tab-contents">
+                <div id="hierarchy-controls">
+                    <div id="controls-row-1">
+                        <div id="add-html-container" title="Add HTML">
+                            <i class="fab fa-html5" id="html-icon"></i>
+                            <p class="control-title">Add HTML</p>
+                        </div>
+                        <div id="add-css-container" title="Add CSS">
+                            <i class="fab fa-css3" id="css-icon"></i>
+                            <p class="control-title">Add CSS</p>
+                        </div>
                     </div>
-                    <div id="add-css-container" title="Add CSS">
-                        <i class="fab fa-css3" id="css-icon"></i>
-                        <p class="control-title">Add CSS</p>
+                    <div id="controls-row-2">
+                        <div id="add-js-container" title="Add JS">
+                            <i class="fab fa-js-square" id="js-icon"></i>
+                            <p class="control-title">Add JS</p>
+                        </div>
+                        <div id="add-folder-container" title="Add Folder">
+                            <i class="fas fa-folder-plus" id="folder-icon"></i>
+                            <p class="control-title">Add Folder</p>
+                        </div>
                     </div>
                 </div>
-                <div id="controls-row-2">
-                    <div id="add-js-container" title="Add JS">
-                        <i class="fab fa-js-square" id="js-icon"></i>
-                        <p class="control-title">Add JS</p>
+                <hr class="top-nav-divider-line" id="divider-2"/>
+                <div id="hierarchy-tree">
+                    <div id="project-folder-container" class="folder-container">
+                        <i class="fas fa-chevron-down carrot"></i>
+                        <p id="project-folder" class="folder">Untitled project</p>
                     </div>
-                    <div id="add-folder-container" title="Add Folder">
-                        <i class="fas fa-folder-plus" id="folder-icon"></i>
-                        <p class="control-title">Add Folder</p>
+                    <div class="folder-contents-container">
+                        <div class="item-container" id="index-item">
+                            <i class="fab fa-html5 item-icon"></i>
+                            <p class="item">index.html</p>
+                        </div>
+                        <div class="item-container" id="style-item">
+                            <i class="fab fa-css3 item-icon"></i>
+                            <p class="item">style.css</p>
+                        </div>
+                        <div class="item-container" id="app-item">
+                            <i class="fab fa-js-square item-icon"></i>
+                            <p class="item">app.js</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <hr class="top-nav-divider-line" id="divider-2"/>
-            <div id="hierarchy-tree">
-                <div id="project-folder-container" class="folder-container">
-                    <i class="fas fa-chevron-down carrot"></i>
-                    <p id="project-folder" class="folder">Untitled project</p>
+            <div id="presets-tab-contents">
+                <div id="favicon-preset-container">
+                    <div id="favicon-preset-top">
+                        <img src="google-code-favicon.PNG" alt="Favicon" id="favicon-img">
+                        <p id="favicon-preset-title">Add A Favicon (.ico)</p>
+                    </div>
+                    <br/>
+                    <div id="favicon-preset-bottom">
+                        <div id="favicon-img-display">
+                            <img id="favicon-img-display-img" height="70px" src="" alt="Preview">
+                            <p id="favicon-default-text">Favicon will display here</p>
+                        </div>
+                        <div id="favicon-file-upload">
+                            <label for="favicon-file" id="favicon-file-label">Upload</label>
+                            <input type="file" id="favicon-file" name="favicon-file" onchange="previewFile()">
+                            <p id="favicon-filename">Upload .ico file</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="folder-contents-container">
-                    <div class="item-container" id="index-item">
-                        <i class="fab fa-html5 item-icon"></i>
-                        <p class="item">index.html</p>
+                <hr class="top-nav-divider-line" id="divider-2"/>
+                <div id="layout-container">
+                    <div id="layout-title-container">
+                        <svg version="1.1" id="layout-icon" xmlns="http://www.w3.org/2000/svg" class="cwIsqe" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" focusable="false" enable-background="new 0 0 24 24" xml:space="preserve"><path d="M4,5v13h17V5H4z M6,16V7h3v9H6z M11,16v-3.5h3V16H11z M19,16h-3v-3.5h3V16z M11,10.5V7h8v3.5H11z"></path><path fill="none" d="M0,0h24v24H0V0z"></path></svg>
+                        <p id="layout-title">Layouts</p>
                     </div>
-                    <div class="item-container" id="style-item">
-                        <i class="fab fa-css3 item-icon"></i>
-                        <p class="item">style.css</p>
-                    </div>
-                    <div class="item-container" id="app-item">
-                        <i class="fab fa-js-square item-icon"></i>
-                        <p class="item">app.js</p>
+                    <div id="layout-cards">
+                        <div id="layout-1">
+                            <svg width="108px" height="74px" viewBox="0 0 108 74" version="1.1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><rect id="path-1" x="0" y="0" width="44" height="34"></rect></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="winner-copy-5" transform="translate(-58.000000, -283.000000)"><g id="Group-11" transform="translate(58.000000, 236.000000)"><g id="Group-13" transform="translate(0.000000, 47.000000)"><path d="M0,0.990129262 C0,0.44329597 0.446521291,0 1.00019413,0 L106.999806,0 C107.552198,0 108,0.453369457 108,0.990129262 L108,73.0098707 C108,73.556704 107.553479,74 106.999806,74 L1.00019413,74 C0.447802166,74 0,73.5466305 0,73.0098707 L0,0.990129262 Z" id="Rectangle-47"></path><g id="Group-4" transform="translate(8.000000, 20.000000)"><g id="Rectangle-122"><use fill="#FDFDFD" fill-rule="evenodd" xlink:href="#path-1"></use><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="43" height="33"></rect></g><g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="17.7304061 16.4633821 19.6563122 18.4540679 24.0304259 12 30.2857143 22 14 22"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="17.4285714" cy="11.7142857" r="1.71428571"></circle></g></g><rect id="Rectangle-122" fill="#9E9E9E" x="57" y="23" width="39" height="2"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="31" width="43" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="36" width="43" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="41" width="22.5599995" height="1"></rect></g></g></g></g></svg>
+                        </div>
                     </div>
                 </div>
             </div>
