@@ -251,19 +251,33 @@ appItem.addEventListener('click', function () {
 let tabs = document.querySelectorAll('.tab-container');
 let tabExits = document.querySelectorAll('.tab-exit');
 
-for (let i = 0; i < tabExits.length; i++) {
-    tabExits[i].addEventListener('click', function () {
-        tabs[i].style.display = 'none';
+for (let i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener('click', function (e) {
+        if (!inArray('tab-exit', e.target.classList)) {
+            for (let j = 0; j < tabExits.length; j++) {
+                if (j !== i) {
+                    tabs[j].classList.remove('tab-selected');
+                }
+            }
+            tabs[i].classList.add('tab-selected');
+        }
     });
 }
 
-for (let i = 0; i < tabs.length; i++) {
-    tabs[i].addEventListener('click', function () {
-        for (let j = 0; j < tabExits.length; j++) {
-            if (j !== i) {
-                tabs[j].classList.remove('tab-selected');
+for (let i = 0; i < tabExits.length; i++) {
+    tabExits[i].addEventListener('click', function () {
+        tabs[i].style.display = 'none';
+        if (inArray('tab-selected', tabs[i].classList)) {
+            tabs[i].classList.remove('tab-selected');
+            if (tabs[tabs.length - 1].style.display !== 'none') {
+                tabs[tabs.length - 1].classList.add('tab-selected');
+            }
+            else if (tabs[tabs.length - 2].style.display !== 'none') {
+                tabs[tabs.length - 2].classList.add('tab-selected');
+            }
+            else {
+                tabs[tabs.length - 3].classList.add('tab-selected');
             }
         }
-        tabs[i].classList.add('tab-selected');
     });
 }
