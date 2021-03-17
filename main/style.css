@@ -560,7 +560,7 @@ main {
 }
 
 .fa-js-square {
-    color: rgb(224, 224, 26);
+    color: rgb(230, 214, 0);
 }
 
 .fa-html5 {
@@ -599,7 +599,7 @@ main {
     color: rgb(95, 95, 95);
 }
 
-.item-container {
+.folder-container {
     padding: 5px 10px;
     background-color: rgb(240, 240, 240);
     border-radius: 10px;
@@ -607,12 +607,30 @@ main {
     align-items: center;
 }
 
-.item {
+.folder {
     padding-left: 10px;
+}
+
+.folder-contents-container {
+    margin-left: 20px;
+    padding: 5px;
 }
 
 .fa-chevron-down, .fa-chevron-up {
     cursor: pointer;
+}
+
+
+.item-container {
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item {
+    padding-left: 10px;
 }
 
 #left-screen {
@@ -621,9 +639,9 @@ main {
 }
 
 #tabs {
-    background-color: rgb(199, 199, 199);
+    background-color: rgb(220, 220, 220);
     border-top: none;
-    height: 4.5vh;
+    height: 4vh;
     width: 115%;
     display: flex;
     align-items: center;
@@ -637,18 +655,42 @@ main {
     padding: 8px;
     cursor: pointer;
     height: 100%;
+    background-color: rgb(230, 230, 230);
+}
+
+.tab-container:active {
+    cursor: grabbing;
 }
 
 .tab-title {
     color: rgb(95, 95, 95);
+    font-size: .9rem;
 }
 
 .tab-selected {
     background-color: rgb(245, 245, 245);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .tab-exit {
     font-size: 1.3rem;
+    cursor: pointer;
+}
+
+#tab-divider-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1px;
+    background-color: rgb(230, 230, 230);
+}
+
+#tab-divider {
+    background-color: rgb(120, 120, 120);
+    height: 55%;
+    width: 1px;
 }
 
 .open-closePreset {

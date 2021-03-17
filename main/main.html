@@ -78,9 +78,22 @@
     <main>
         <div id="left-screen">
             <div id="tabs">
-                <div class="tab-container tab-selected" id="initial-tab-container">
+                <div class="tab-container tab-selected" id="index-tab">
                     <i class="fab fa-html5 tab-icon" id="initial-tab-icon"></i>
                     <p class="tab-title" id="initial-tab-title">index.html</p>
+                    <p class="tab-exit">&times;</p>
+                </div>
+                <div class="tab-container" id="style-tab">
+                    <i class="fab fa-css3 tab-icon"></i>
+                    <p class="tab-title">style.css</p>
+                    <p class="tab-exit">&times;</p>
+                </div>
+                <!--<div id="tab-divider-container">
+                    <span id="tab-divider"></span>
+                </div>-->
+                <div class="tab-container" id="app-tab">
+                    <i class="fab fa-js-square tab-icon"></i>
+                    <p class="tab-title">app.js</p>
                     <p class="tab-exit">&times;</p>
                 </div>
             </div>
@@ -133,9 +146,23 @@
             </div>
             <hr class="top-nav-divider-line" id="divider-2"/>
             <div id="hierarchy-tree">
-                <div id="project-item-container" class="item-container">
-                    <i class="fas fa-chevron-down" class="carrot"></i>
-                    <p id="project-item" class="item">Untitled project</p>
+                <div id="project-folder-container" class="folder-container">
+                    <i class="fas fa-chevron-down carrot"></i>
+                    <p id="project-folder" class="folder">Untitled project</p>
+                </div>
+                <div class="folder-contents-container">
+                    <div class="item-container" id="index-item">
+                        <i class="fab fa-html5 item-icon"></i>
+                        <p class="item">index.html</p>
+                    </div>
+                    <div class="item-container" id="style-item">
+                        <i class="fab fa-css3 item-icon"></i>
+                        <p class="item">style.css</p>
+                    </div>
+                    <div class="item-container" id="app-item">
+                        <i class="fab fa-js-square item-icon"></i>
+                        <p class="item">app.js</p>
+                    </div>
                 </div>
             </div>
         </div>

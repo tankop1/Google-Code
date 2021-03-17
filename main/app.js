@@ -1,7 +1,7 @@
 // ------------- WORKSPACE TITLE JAVASCRIPT --------------
 
 let workspaceTitle = document.getElementById('workspace-title');
-let projectItem = document.getElementById('project-item');
+let projectItem = document.getElementById('project-folder');
 
 // Function for selecting / highlighting text
 function selectElementContents(el) {
@@ -194,6 +194,7 @@ function presetsClicked() {
 // ----------------- HIERARCHY TREE COLLAPSE -------------------
 
 let carrots = document.querySelectorAll('.fa-chevron-down');
+let folderContents = document.querySelectorAll('.folder-contents-container');
 /*let carrotsUp = document.querySelectorAll('.fa-chevron-up');
 let carrots = carrotsDown + carrotsUp;*/
 
@@ -213,10 +214,56 @@ for (let i = 0; i < carrots.length; i++) {
         if (inArray('fa-chevron-down', carrots[i].classList)) {
             carrots[i].classList.remove('fa-chevron-down');
             carrots[i].classList.add('fa-chevron-up');
+            folderContents[i].style.display = 'none';
         }
         else {
             carrots[i].classList.remove('fa-chevron-up');
             carrots[i].classList.add('fa-chevron-down');
+            folderContents[i].style.display = 'block';
         }
+    });
+}
+
+
+// ---------------- HIERARCHY ITEM CLICK ------------------
+let indexTab = document.getElementById('index-tab');
+let styleTab = document.getElementById('style-tab');
+let appTab = document.getElementById('app-tab');
+let indexItem = document.getElementById('index-item');
+let styleItem = document.getElementById('style-item');
+let appItem = document.getElementById('app-item');
+
+indexItem.addEventListener('click', function () {
+    indexTab.style.display = 'flex';
+});
+
+styleItem.addEventListener('click', function () {
+    styleTab.style.display = 'flex';
+});
+
+appItem.addEventListener('click', function () {
+    appTab.style.display = 'flex';
+});
+
+
+// ------------------ TAB FUNCTIONALITY -------------------
+
+let tabs = document.querySelectorAll('.tab-container');
+let tabExits = document.querySelectorAll('.tab-exit');
+
+for (let i = 0; i < tabExits.length; i++) {
+    tabExits[i].addEventListener('click', function () {
+        tabs[i].style.display = 'none';
+    });
+}
+
+for (let i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener('click', function () {
+        for (let j = 0; j < tabExits.length; j++) {
+            if (j !== i) {
+                tabs[j].classList.remove('tab-selected');
+            }
+        }
+        tabs[i].classList.add('tab-selected');
     });
 }
