@@ -335,6 +335,7 @@ header {
     border: 1px solid rgb(177, 177, 177);
     border-radius: 5px;
     box-shadow: 0.5px 0.5px 2px rgb(177, 177, 177);
+    background-color: rgb(245, 245, 245);
 }
 
 #preview-inpage-container i {
@@ -447,25 +448,25 @@ main {
 .terminal-up {
     animation-name: terminalUp;
     animation-fill-mode: forwards;
-    animation-duration: 1s;
+    animation-duration: .75s;
 }
 
 .button-up {
     animation-name: buttonUp;
     animation-fill-mode: forwards;
-    animation-duration: 1s;
+    animation-duration: .75s;
 }
 
 .terminal-down {
     animation-name: terminalDown;
     animation-fill-mode: forwards;
-    animation-duration: 1s;
+    animation-duration: .75s;
 }
 
 .button-down {
     animation-name: buttonDown;
     animation-fill-mode: forwards;
-    animation-duration: 1s;
+    animation-duration: .75s;
 }
 
 #top-nav {
@@ -698,7 +699,7 @@ main {
 }
 
 #favicon-preset-container {
-    padding: 15px 20px;
+    padding: 23px 20px;
     margin-top: 10px;
 }
 
@@ -765,6 +766,7 @@ main {
 }
 
 #favicon-img-display-img {
+    max-width: 135px;
     display: none;
 }
 
@@ -772,6 +774,11 @@ main {
     font-size: .8rem;
     color:rgb(95, 95, 95);
     text-align: center;
+}
+
+#greyscale-logo {
+    width: 250px;
+    opacity: 0.8;
 }
 
 .open-closePreset {

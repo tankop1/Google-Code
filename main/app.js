@@ -239,24 +239,47 @@ let appTab = document.getElementById('app-tab');
 let indexItem = document.getElementById('index-item');
 let styleItem = document.getElementById('style-item');
 let appItem = document.getElementById('app-item');
+let body = document.querySelector('body');
+let tabs = document.querySelectorAll('.tab-container');
+
+function noneToTabs(thisTab) {
+    codeInput.style.backgroundColor = 'rgb(245, 245, 245)';
+    codeInput.innerHTML = '';
+    codeInput.innerText = currentTextBeforeClose;
+    codeInput.style.display = 'block';
+    codeInput.style.justifyContent = 'none';
+    codeInput.style.alignItems = 'none';
+    codeInput.contentEditable = 'true';
+    body.style.backgroundColor = 'rgb(245, 245, 245)';
+    compileCode();
+
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('tab-selected');
+    }
+
+    thisTab.classList.add('tab-selected');
+}
 
 indexItem.addEventListener('click', function () {
     indexTab.style.display = 'flex';
+    noneToTabs(indexTab);
 });
 
 styleItem.addEventListener('click', function () {
     styleTab.style.display = 'flex';
+    noneToTabs(styleTab);
 });
 
 appItem.addEventListener('click', function () {
     appTab.style.display = 'flex';
+    noneToTabs(appTab);
 });
 
 
 // ------------------ TAB FUNCTIONALITY -------------------
 
-let tabs = document.querySelectorAll('.tab-container');
 let tabExits = document.querySelectorAll('.tab-exit');
+let currentTextBeforeClose = '';
 
 for (let i = 0; i < tabs.length; i++) {
     tabs[i].addEventListener('click', function (e) {
@@ -282,14 +305,31 @@ for (let i = 0; i < tabExits.length; i++) {
             else if (tabs[tabs.length - 2].style.display !== 'none') {
                 tabs[tabs.length - 2].classList.add('tab-selected');
             }
-            else {
+            else if (tabs[tabs.length - 3].style.display !== 'none') {
                 tabs[tabs.length - 3].classList.add('tab-selected');
+            }
+            else {
+                allTabsClosed();
             }
         }
     });
 }
 
+function allTabsClosed() {
+    currentTextBeforeClose = codeInput.innerText;
+    codeInput.style.backgroundColor = 'rgb(220, 220, 220)';
+    codeInput.innerText = '';
+    codeInput.innerHTML = '<img src="google-code-logo-grayscale.png" alt="Greyscale Logo" id="greyscale-logo">';
+    codeInput.style.display = 'flex';
+    codeInput.style.justifyContent = 'center';
+    codeInput.style.alignItems = 'center';
+    codeInput.contentEditable = 'false';
+    body.style.backgroundColor = 'rgb(220, 220, 220)';
+}
+
 // --------------- FAVICON PRESET FUNCTIONALITY ----------------
+
+let fileLinks = [];
 
 function previewFile() {
     let preview = document.getElementById('favicon-img-display-img');
@@ -298,6 +338,7 @@ function previewFile() {
   
     reader.onloadend = function () {
         changeStyle();
+        fileLinks.push(reader.result);
         preview.src = reader.result;
     }
   
@@ -321,7 +362,6 @@ function changeStyle() {
     let preview = document.getElementById('favicon-img-display-img');
     let defaultText = document.getElementById('favicon-default-text');
     let faviconFilename = document.getElementById('favicon-filename');
-    let filenameArray = split(document.getElementById('favicon-file').files[0].name);
 
     imgPreviewContainer.style.border = 'none';
     preview.style.display = 'block';

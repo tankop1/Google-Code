@@ -98,18 +98,8 @@
                 </div>
             </div>
             <div id="code-area">
-                <p id="code-input" spellcheck="false" oninput="" contenteditable>
-    &lt;!DOCTYPE html&gt;
-    &lt;html&gt;
-    &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
+                <p id="code-input" spellcheck="false" oninput="compileCode();" contenteditable>
+&lt;!DOCTYPE html&gt;
             </div>
         </div>
         <div id="right-nav-spot"></div>
@@ -187,7 +177,7 @@
                     </div>
                 </div>
                 <hr class="top-nav-divider-line" id="divider-2"/>
-                <div id="layout-container">
+                <!--<div id="layout-container">
                     <div id="layout-title-container">
                         <svg version="1.1" id="layout-icon" xmlns="http://www.w3.org/2000/svg" class="cwIsqe" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" focusable="false" enable-background="new 0 0 24 24" xml:space="preserve"><path d="M4,5v13h17V5H4z M6,16V7h3v9H6z M11,16v-3.5h3V16H11z M19,16h-3v-3.5h3V16z M11,10.5V7h8v3.5H11z"></path><path fill="none" d="M0,0h24v24H0V0z"></path></svg>
                         <p id="layout-title">Layouts</p>
@@ -197,7 +187,7 @@
                             <svg width="108px" height="74px" viewBox="0 0 108 74" version="1.1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><rect id="path-1" x="0" y="0" width="44" height="34"></rect></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="winner-copy-5" transform="translate(-58.000000, -283.000000)"><g id="Group-11" transform="translate(58.000000, 236.000000)"><g id="Group-13" transform="translate(0.000000, 47.000000)"><path d="M0,0.990129262 C0,0.44329597 0.446521291,0 1.00019413,0 L106.999806,0 C107.552198,0 108,0.453369457 108,0.990129262 L108,73.0098707 C108,73.556704 107.553479,74 106.999806,74 L1.00019413,74 C0.447802166,74 0,73.5466305 0,73.0098707 L0,0.990129262 Z" id="Rectangle-47"></path><g id="Group-4" transform="translate(8.000000, 20.000000)"><g id="Rectangle-122"><use fill="#FDFDFD" fill-rule="evenodd" xlink:href="#path-1"></use><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="43" height="33"></rect></g><g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="17.7304061 16.4633821 19.6563122 18.4540679 24.0304259 12 30.2857143 22 14 22"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="17.4285714" cy="11.7142857" r="1.71428571"></circle></g></g><rect id="Rectangle-122" fill="#9E9E9E" x="57" y="23" width="39" height="2"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="31" width="43" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="36" width="43" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="41" width="22.5599995" height="1"></rect></g></g></g></g></svg>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
         <div id="terminal-container">
@@ -206,6 +196,9 @@
     <div id="preview-inpage-container" title="Terminal - Work In Progress">
         <i class="fas fa-terminal" id="preview-inpage"></i>
     </div>
+    <script src="/assets/js/rainbow.js"></script>
+    <script src="/assets/js/language/generic.js"></script>
+    <script src="/assets/js/language/html.js"></script>
 </body>
 <script src="app.js"></script> <!-- Main Javascript File - Animations/Basic Functionality -->
 <script src="undoRedo.js"></script> <!-- Undo and Redo functionality -->
