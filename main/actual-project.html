@@ -1,0 +1,2398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> <!-- Importing font from Google -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/android-chrome-512x512.png"> <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#ec8900">
+    <meta name="msapplication-TileColor" content="#ff7b20">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://kit.fontawesome.com/0bb23f7c87.js" crossorigin="anonymous"></script> <!--SVG Icon Kit-->
+    <title>Untitled project - Google Code</title>
+</head>
+<body>
+    <header>
+        <div id="top-row">
+            <div id="group-1">
+                <a href="#" title="Code Home"><img id="logo" src="assets/google-code-logo.PNG" alt="Logo"></a>
+                <div id="top-left">
+                    <div id="grouping">
+                        <div id="workspace-title-container">
+                            <span id="workspace-title" spellcheck="false" contenteditable>Untitled project</span>
+                        </div>
+                        <div id="top-left-1">
+                            <div id="star-icon-container" class="icon-container" title="Star">
+                                <i class="far fa-star" id="star-icon"></i>
+                            </div>
+                            <div id="folder-icon-container" class="icon-container" title="Move">
+                                <i class="far fa-folder-open" id="folder-icon"></i>
+                            </div>
+                            <div id="cloud-icon-container" class="icon-container" title="File Status">
+                                <i class="fas fa-cloud-download-alt" id="cloud-icon"></i>
+                                <p id="saved-message">Saving...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <nav>
+                        <div id="nav-buttons">
+                            <button id="file-button" class="nav-button">File</button>
+                            <button id="edit-button" class="nav-button">Edit</button>
+                            <button id="view-button" class="nav-button">View</button>
+                            <button id="tools-button" class="nav-button">Tools</button>
+                            <button id="help-button" class="nav-button">Help</button>
+                        </div>
+                        <p id="version-history-link">Last edit was 2 seconds ago</p>
+                    </nav>
+                </div>
+            </div>
+            <div id="group-2">
+                <div id="undo-container" title="Undo">
+                    <svg id="undo" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M hhikbc"><path d="M14.1 8H7.83l2.59-2.59L9 4 4 9l5 5 1.41-1.41L7.83 10h6.27c2.15 0 3.9 1.57 3.9 3.5S16.25 17 14.1 17H7v2h7.1c3.25 0 5.9-2.47 5.9-5.5S17.35 8 14.1 8z"></path></svg>
+                </div>
+                <div id="redo-container" title="Redo">
+                    <svg id="redo" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M hhikbc"><path d="M6 13.5C6 11.57 7.75 10 9.9 10h6.27l-2.59 2.59L15 14l5-5-5-5-1.41 1.41L16.17 8H9.9C6.65 8 4 10.47 4 13.5S6.65 19 9.9 19H17v-2H9.9C7.75 17 6 15.43 6 13.5z"></path></svg>
+                </div>
+                <div id="preview-container" title="Preview">
+                    <svg id="preview" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M5 6h16V4H5c-1.1 0-2 .9-2 2v11H1v3h11v-3H5V6zm16 2h-6c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm-1 9h-4v-7h4v7z"></path></svg>
+                </div>
+                <div id="comment-container" title="Dark Mode">
+                    <i class="fas fa-adjust" id="comment"></i>
+                </div>
+                <div id="collab-history-container" title="Git Versioning">
+                    <i class="fas fa-code-branch" id="collab-history"></i>
+                </div>
+                <div id="share-button" title="Share"><i class="fas fa-lock" id="lock-icon"></i> Share</div>
+                <img id="account-icon" src="https://lh3.googleusercontent.com/ogw/ADGmqu_RkfDgi9V4F4wJJNxngisrJMP0N-42AfJ5cVdU=s32-c-mo" alt="Account Icon" title="Tanner Kopel">
+            </div>
+        </div>
+        <hr class="divider"/>
+    </header>
+    <main>
+        <div id="left-screen">
+            <div id="tabs">
+                <div class="tab-container tab-selected" id="index-tab">
+                    <i class="fab fa-html5 tab-icon" id="initial-tab-icon"></i>
+                    <p class="tab-title" id="initial-tab-title">index.html</p>
+                    <p class="tab-exit" id="index-exit">&times;</p>
+                </div>
+                <div class="tab-container" id="style-tab">
+                    <i class="fab fa-css3 tab-icon"></i>
+                    <p class="tab-title">style.css</p>
+                    <p class="tab-exit" id="style-exit">&times;</p>
+                </div>
+                <!--<div id="tab-divider-container">
+                    <span id="tab-divider"></span>
+                </div>-->
+                <div class="tab-container" id="app-tab">
+                    <i class="fab fa-js-square tab-icon"></i>
+                    <p class="tab-title">app.js</p>
+                    <p class="tab-exit" id="app-exit">&times;</p>
+                </div>
+            </div>
+            <div id="code-area">
+                <div id="auto-suggestions"></div>
+                <div id="code-input" spellcheck="false" oninput="displaySuggestionBox(getCaretCoordinates()); //compileCode();//wrapLines(document.getElementById('pre-input'));" contenteditable><pre id="pre-input">&lt;!DOCTYPE html&gt;</pre>
+                </div>
+                <p id="code-input-css" spellcheck="false" oninput="//compileCode();" contenteditable>
+                    body {<br/><br/>
+                    }
+                </p>
+                <p id="code-input-js" spellcheck="false" oninput="//compileCode();" contenteditable></p>
+            </div>
+        </div>
+        <div id="right-nav-spot"></div>
+        <div id="right-nav">
+            <div id="top-nav">
+                <a href="#" id="hierarchy-tab" onclick="hierarchyClicked()">Hierarchy</a>
+                <a href="#" id="presets-tab" onclick="presetsClicked()">Presets</a>
+            </div>
+            <div id="top-nav-divider">
+                <span id="hierarchy-underline"></span><span id="presets-underline"></span>
+            </div>
+            <hr class="top-nav-divider-line"/>
+            <div id="hierarchy-tab-contents">
+                <div id="hierarchy-controls">
+                    <div id="controls-row-1">
+                        <div id="add-html-container" title="Add HTML">
+                            <i class="fab fa-html5" id="html-icon"></i>
+                            <p class="control-title">Add HTML</p>
+                        </div>
+                        <div id="add-css-container" title="Add CSS">
+                            <i class="fab fa-css3" id="css-icon"></i>
+                            <p class="control-title">Add CSS</p>
+                        </div>
+                    </div>
+                    <div id="controls-row-2">
+                        <div id="add-js-container" title="Add JS">
+                            <i class="fab fa-js-square" id="js-icon"></i>
+                            <p class="control-title">Add JS</p>
+                        </div>
+                        <div id="add-folder-container" title="Add Folder">
+                            <i class="fas fa-folder-plus" id="folder-icon"></i>
+                            <p class="control-title">Add Folder</p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="top-nav-divider-line" id="divider-2"/>
+                <div id="hierarchy-tree">
+                    <div id="project-folder-container" class="folder-container">
+                        <i class="fas fa-chevron-down carrot"></i>
+                        <p id="project-folder" class="folder">Untitled project</p>
+                    </div>
+                    <div class="folder-contents-container">
+                        <div class="item-container" id="index-item">
+                            <i class="fab fa-html5 item-icon"></i>
+                            <p class="item">index.html</p>
+                        </div>
+                        <div class="item-container" id="style-item">
+                            <i class="fab fa-css3 item-icon"></i>
+                            <p class="item">style.css</p>
+                        </div>
+                        <div class="item-container" id="app-item">
+                            <i class="fab fa-js-square item-icon"></i>
+                            <p class="item">app.js</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="presets-tab-contents">
+                <div id="favicon-preset-container">
+                    <div id="favicon-preset-top">
+                        <img src="assets/google-code-favicon.PNG" alt="Favicon" id="favicon-img">
+                        <p id="favicon-preset-title">Add A Favicon (.ico)</p>
+                    </div>
+                    <br/>
+                    <div id="favicon-preset-bottom">
+                        <div id="favicon-img-display">
+                            <img id="favicon-img-display-img" height="70px" src="" alt="Preview" draggable="false">
+                            <p id="favicon-default-text">Favicon will display here</p>
+                        </div>
+                        <div id="favicon-file-upload">
+                            <label for="favicon-file" id="favicon-file-label">Upload</label>
+                            <input type="file" id="favicon-file" name="favicon-file" onchange="previewFile()">
+                            <p id="favicon-filename">Upload .ico file</p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="top-nav-divider-line" id="divider-2"/>
+                <!--<div id="layout-container">
+                    <div id="layout-title-container">
+                        <svg version="1.1" id="layout-icon" xmlns="http://www.w3.org/2000/svg" class="cwIsqe" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" focusable="false" enable-background="new 0 0 24 24" xml:space="preserve"><path d="M4,5v13h17V5H4z M6,16V7h3v9H6z M11,16v-3.5h3V16H11z M19,16h-3v-3.5h3V16z M11,10.5V7h8v3.5H11z"></path><path fill="none" d="M0,0h24v24H0V0z"></path></svg>
+                        <p id="layout-title">Layouts</p>
+                    </div>
+                    <div id="layout-cards">
+                        <div id="layout-1">
+                            <svg width="108px" height="74px" viewBox="0 0 108 74" version="1.1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><rect id="path-1" x="0" y="0" width="44" height="34"></rect></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="winner-copy-5" transform="translate(-58.000000, -283.000000)"><g id="Group-11" transform="translate(58.000000, 236.000000)"><g id="Group-13" transform="translate(0.000000, 47.000000)"><path d="M0,0.990129262 C0,0.44329597 0.446521291,0 1.00019413,0 L106.999806,0 C107.552198,0 108,0.453369457 108,0.990129262 L108,73.0098707 C108,73.556704 107.553479,74 106.999806,74 L1.00019413,74 C0.447802166,74 0,73.5466305 0,73.0098707 L0,0.990129262 Z" id="Rectangle-47"></path><g id="Group-4" transform="translate(8.000000, 20.000000)"><g id="Rectangle-122"><use fill="#FDFDFD" fill-rule="evenodd" xlink:href="#path-1"></use><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="43" height="33"></rect></g><g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="17.7304061 16.4633821 19.6563122 18.4540679 24.0304259 12 30.2857143 22 14 22"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="17.4285714" cy="11.7142857" r="1.71428571"></circle></g></g><rect id="Rectangle-122" fill="#9E9E9E" x="57" y="23" width="39" height="2"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="31" width="43" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="36" width="43" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="41" width="22.5599995" height="1"></rect></g></g></g></g></svg>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        <div id="terminal-container">
+            <div id="terminal-area">
+                <div id="terminal-input" contenteditable><span class="terminal-line">cd "../My Project/index.html"</span></div>
+            </div>
+            <div id="terminal-controls">
+            </div>
+        </div>
+    </main>
+    <div id="preview-inpage-container" title="Terminal - Work In Progress">
+        <i class="fas fa-terminal" id="preview-inpage"></i>
+    </div>
+    <div id="preview-trial">
+        <div id="preview-container-2">
+            <iframe id="preview-area"></iframe>
+        </div>
+        <div id="controls-container">
+            <input onclick="phoneClicked(); tabletClicked(); computerClicked();" type="radio" name="orientation" id="phone-input">
+            <label for="phone-input" id="phone-container">
+                <svg id="phone" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 21H7v-1h10v1zm0-3H7V6h10v12zM7 4V3h10v1H7z"></path></svg>
+            </label>
+            <input onclick="phoneClicked(); tabletClicked(); computerClicked();" type="radio" name="orientation" id="tablet-input">
+            <label for="tablet-input" id="tablet-container">
+                <svg id="tablet" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M1.01 6L1 18c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H3c-1.1 0-1.99.9-1.99 2zM21 6v12h-1V6h1zm-3 0v12H6V6h12zM4 18H3V6h1v12z"></path></svg>
+            </label>
+            <input onclick="phoneClicked(); tabletClicked(); computerClicked();" type="radio" name="orientation" id="computer-input">
+            <label for="computer-input" id="computer-container">
+                <svg id="computer" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2M4 6h16v10H4V6zm.67 13H1v2h22v-2h-3.67"></path></svg>
+            </label>
+            <span id="divider"></span>
+            <div id="report-container">
+                <svg id="report-problem" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"></path><path d="M11 5h2v6h-2zm0 8h2v2h-2z"></path></svg>
+            </div>
+            <div id="refresh-container">
+                <i class="fas fa-sync-alt" id="refresh"></i>
+            </div>
+            <p id="exit">&times;</p>
+        </div>
+    </div>
+</body>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(245, 245, 245);
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+}
+
+header {
+    padding: 0px 15px;
+    padding-right: 20px;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+}
+
+#top-row {
+    padding-top: 6px;
+}
+
+#group-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+}
+
+#top-left-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    color: rgb(95, 95, 95);
+}
+
+#top-left nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 88%;
+}
+
+#top-left {
+    width: 90%;
+}
+
+#logo {
+    width: 2.1rem;
+    height: auto;
+    margin-left: 5px;
+}
+
+#workspace-title {
+    border: none;
+    outline: none;
+    font-size: 1.15rem;
+    border-radius: 4px;
+    padding: 1px 6px;
+    width: 130px;
+    color: rgb(120, 120, 120);
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+}
+
+#workspace-title:hover {
+    outline: .5px solid lightgrey;
+}
+
+#grouping {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: max-content;
+    height: 3.25vh;
+}
+
+#group-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+}
+
+#share-button {
+    background-color: #FF914D;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: .85rem;
+    cursor: pointer;
+}
+
+#share-button:hover {
+    opacity: .9;
+}
+
+#lock-icon {
+    transform: scale(.8);
+}
+
+#account-icon {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#collab-history-container {
+    border-radius: 50%;
+    padding: 12px 15px;
+    cursor: pointer;
+}
+
+#collab-history-container:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+#collab-history {
+    transform: scale(1.15);
+}
+
+.icon-container {
+    border-radius: 3px;
+    padding: 3px 4px;
+    cursor: pointer;
+}
+
+.icon-container:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.far, .fas {
+    transform: scale(.8);
+}
+
+#star-icon-container {
+    margin-left: 5px;
+}
+
+#star-icon {
+    color: rgb(95, 95, 95);
+}
+
+#cloud-icon-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 5px 4px;
+}
+
+.nav-button {
+    padding: 5px 8px;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: .88rem;
+}
+
+.nav-button:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+#version-history-link {
+    text-decoration: underline;
+    font-size: .8rem;
+    cursor: pointer;
+    color: rgb(95, 95, 95);
+    white-space: nowrap;
+}
+
+#nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#saved-message {
+    font-size: .8rem;
+    padding-left: 8px;
+}
+
+#comment-container {
+    border-radius: 50%;
+    padding: 12px 14px;
+    cursor: pointer;
+}
+
+#comment-container:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+#comment {
+    transform: scale(1.25);
+}
+
+#code-area {
+    display: flex;
+    justify-content: center;
+    width: 115%;
+    overflow: auto;
+    height: 100%;
+}
+
+#code-input {
+    resize: none;
+    width: 100%;
+    height: 80vh;
+    outline: none;
+    border: none;
+    padding: 45px;
+    background-color: rgb(245, 245, 245);
+    font-family: monospace;
+    font-size: 1.15rem;
+}
+
+#top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.divider {
+    height: 1px;
+    width: 105%;
+    background-color: lightgrey;
+    border: none;
+    margin-top: 5px;
+    margin-left: -15px;
+}
+
+#bottom-row {
+    height: 3.5vh;
+    display: flex;
+    align-items: center;
+}
+
+#bottom-group-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    margin-top: 5px;
+}
+
+#bottom-group-1 div {
+    padding: 3px 7px;
+    cursor: pointer;
+    color: rgb(95, 95, 95);
+    border-radius: 5px;
+}
+
+#bottom-group-1 div:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.vertical-line {
+    height: 65%;
+    width: 1px;
+    background-color: lightgrey;
+    margin-top: 5px;
+    margin-left: 7px;
+}
+
+#zoom-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+    width: 65px;
+    height: 25px;
+    border-radius: 2px;
+    margin-top: 5px;
+    margin-left: 8px;
+}
+
+#zoom-box:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+#zoom-box:hover #zoom-input {
+    background-color: rgb(240, 240, 240);
+}
+
+#zoom-box:hover > #zoom-divider {
+    background-color: lightgrey;
+}
+
+#zoom-divider {
+    height: 75%;
+    width: 1px;
+    background-color: white;
+}
+
+#zoom-input {
+    width: 38px;
+    padding: 3px 4px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    font-size: .74rem;
+    color: rgb(95, 95, 95);
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+}
+
+#zoom-right {
+    cursor: pointer;
+}
+
+#zoom-arrow-down {
+    color: rgb(95, 95, 95);
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
+#preview-inpage-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: max-content;
+    padding: 9px;
+    position: fixed;
+    bottom: 1.5%;
+    right: 18%;
+    border: 1px solid rgb(177, 177, 177);
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 2px rgb(177, 177, 177);
+    background-color: rgb(245, 245, 245);
+}
+
+#preview-inpage-container i {
+    color: rgb(95, 95, 95);
+    fill: rgb(95, 95, 95);
+    transform: scale(1.4);
+}
+
+#preview-container {
+    border-radius: 50%;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+#preview-container:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+#comment, #collab-history, #preview, #undo, #redo {
+    color: rgb(95, 95, 95);
+    fill: rgb(95, 95, 95);
+}
+
+#preview {
+    margin-top: 3px;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#right-nav-spot {
+    height: 100%;
+    width: 530px;
+}
+
+#right-nav {
+    height: 92.3%;
+    width: 250px;
+    background-color: white;
+    position: fixed;
+    right: 0%;
+    bottom: 0%;
+    border-left: 1px solid rgb(199, 199, 199);
+}
+
+.divider-vertical {
+    height: 100%;
+    width: 1px;
+    background-color: lightgrey;
+    border: none;
+}
+
+#terminal-container {
+    height: 0px;
+    width: 83.3%;
+    background-color: white;
+    position: fixed;
+    left: 0%;
+    bottom: 0%;
+    border-top: 1px solid rgb(177, 177, 177);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes terminalUp {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: 200px;
+    }
+}
+
+@keyframes buttonUp {
+    0% {
+        bottom: 1.5%;
+    }
+    100% {
+        bottom: 215px;
+    }
+}
+
+@keyframes terminalDown {
+    0% {
+        height: 200px;
+    }
+    100% {
+        height: 0px;
+    }
+}
+
+@keyframes buttonDown {
+    0% {
+        bottom: 215px;
+    }
+    100% {
+        bottom: 1.5%;
+    }
+}
+
+.terminal-up {
+    animation-name: terminalUp;
+    animation-fill-mode: forwards;
+    animation-duration: .75s;
+}
+
+.button-up {
+    animation-name: buttonUp;
+    animation-fill-mode: forwards;
+    animation-duration: .75s;
+}
+
+.terminal-down {
+    animation-name: terminalDown;
+    animation-fill-mode: forwards;
+    animation-duration: .75s;
+}
+
+.button-down {
+    animation-name: buttonDown;
+    animation-fill-mode: forwards;
+    animation-duration: .75s;
+}
+
+#top-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+#hierarchy-tab, #presets-tab {
+    color: rgb(95, 95, 95);
+    text-decoration: none;
+    width: max-content;
+    font-weight: bold;
+}
+
+#hierarchy-tab {
+    color: #FF914D;
+}
+
+#undo-container, #redo-container {
+    border-radius: 50%;
+    padding: 7px 10px;
+    cursor: pointer;
+}
+
+#undo-container:hover, #redo-container:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+#hierarchy-underline, #presets-underline {
+    height: 3px;
+    width: 50px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #FF914D;
+}
+
+#presets-underline {
+    width: 40px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.top-nav-divider-line {
+    border: .5px solid rgb(199, 199, 199);
+}
+
+#top-nav-divider {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+#hierarchy-controls {
+    width: 95%;
+    padding-top: 15px;
+    margin-left: 5px;
+}
+
+#controls-row-1, #controls-row-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 95px;
+    width: 100%;
+}
+
+#controls-row-2 {
+    margin-left: 3px;
+}
+
+#hierarchy-controls div div {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 60px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+#hierarchy-controls div div i {
+    /*color: rgb(95, 95, 95);*/
+    transform: scale(1.5);
+    width: max-content;
+}
+
+.fa-css3 {
+    color: rgb(71, 71, 212);
+}
+
+.fa-js-square {
+    color: rgb(230, 214, 0);
+}
+
+.fa-html5 {
+    color: rgb(214, 99, 84);
+}
+
+#folder-icon {
+    color: rgb(95, 95, 95);
+}
+
+.control-title {
+    font-size: .9rem;
+    color: rgb(95, 95, 95);
+}
+
+#hierarchy-controls div div:hover .control-title {
+    color: black;
+}
+
+#hierarchy-controls div div:active {
+    background-color: rgb(240, 240, 240);
+}
+
+
+#add-js-container {
+    padding: 8px 20px !important;
+}
+
+#divider-2 {
+    margin-top: 10px;
+}
+
+#hierarchy-tree {
+    padding: 20px;
+    font-size: .875rem;
+    color: rgb(95, 95, 95);
+}
+
+.folder-container {
+    padding: 5px 10px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.folder {
+    padding-left: 10px;
+}
+
+.folder-contents-container {
+    margin-left: 20px;
+    padding: 5px;
+}
+
+.fa-chevron-down, .fa-chevron-up {
+    cursor: pointer;
+}
+
+
+.item-container {
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item {
+    padding-left: 10px;
+}
+
+#left-screen {
+    height: 84.7%;
+    width: 100%;
+}
+
+#tabs {
+    background-color: rgb(220, 220, 220);
+    border-top: none;
+    height: 4vh;
+    width: 115%;
+    display: flex;
+    align-items: center;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 11%;
+    padding: 8px;
+    cursor: pointer;
+    height: 100%;
+    background-color: rgb(230, 230, 230);
+}
+
+.tab-container:active {
+    cursor: grabbing;
+}
+
+.tab-title {
+    color: rgb(95, 95, 95);
+    font-size: .9rem;
+}
+
+.tab-selected {
+    background-color: rgb(245, 245, 245);
+}
+
+.tab-selected-darkmode {
+    background-color: rgb(95, 95, 95);
+}
+
+.tab-exit {
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: rgb(95, 95, 95);
+}
+
+#tab-divider-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1px;
+    background-color: rgb(230, 230, 230);
+}
+
+#tab-divider {
+    background-color: rgb(120, 120, 120);
+    height: 55%;
+    width: 1px;
+}
+
+#presets-tab-contents {
+    display: none;
+}
+
+#favicon-preset-container {
+    padding: 23px 20px;
+    margin-top: 10px;
+}
+
+#favicon-preset-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#favicon-preset-title {
+    color: rgb(95, 95, 95);
+}
+
+#favicon-preset-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 193px;
+    margin: 0 auto;
+}
+
+#favicon-file {
+    display: none;
+}
+
+#favicon-file-label {
+    background-color: #FF914D;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 80px;
+}
+
+#favicon-img {
+    width: 30px;
+    height: auto;
+}
+
+#favicon-file-upload {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+}
+
+#favicon-img-display {
+    border: 2px solid rgb(220, 220, 220);
+    height: 75px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(220, 220, 220);
+    font-size: .7rem;
+}
+
+#favicon-default-text {
+    width: 70px;
+    text-align: center;
+}
+
+#favicon-img-display-img {
+    max-width: 135px;
+    display: none;
+    cursor: grab;
+}
+
+#favicon-filename {
+    font-size: .8rem;
+    color:rgb(95, 95, 95);
+    text-align: center;
+}
+
+#greyscale-logo {
+    width: 250px;
+    opacity: 0.8;
+}
+
+.open-closePreset {
+    color: blue;
+}
+
+.tag-namePreset {
+    color: green;
+}
+
+.attribute-namePreset {
+    color: red;
+}
+
+/* STUFF HERE */
+
+#preview-container-2 {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    transition: width .5s, height .5s;
+    padding: 0px;
+}
+
+#preview-area {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0.5px 0.5px 8px darkgrey;
+}
+
+#controls-container {
+    background-color: black;
+    position: fixed;
+    bottom: 10%;
+    right: 8%;
+    border-radius: 50px;
+    width: 325px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid darkgray;
+}
+
+#tablet, #phone, #report-problem, #refresh {
+    color: darkgrey;
+    fill: darkgrey;
+    cursor: pointer;
+}
+
+#refresh-container {
+    transform: scale(1.5);
+}
+
+#exit {
+    font-size: 2.25rem;
+    color: #FF914D;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#computer {
+    fill: white;
+    cursor: pointer;
+}
+
+#divider {
+    background-color: white;
+    height: 40%;
+    width: 1px;
+}
+
+#controls-container svg:hover {
+    color: rgb(236, 236, 236);
+    fill: rgb(236, 236, 236);
+}
+
+#controls-container i:hover {
+    color: rgb(236, 236, 236);
+    fill: rgb(236, 236, 236);
+}
+
+#controls-container input {
+    display: none;
+}
+
+#preview-trial {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(230, 230, 230);
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: none;
+    color: black;
+}
+
+#code-input-css {
+    resize: none;
+    width: 100%;
+    height: 80vh;
+    outline: none;
+    border: none;
+    padding: 45px;
+    background-color: rgb(245, 245, 245);
+    font-family: "Lucida Grande", Verdana;
+    font-size: .85rem;
+    display: none;
+    color: black;
+}
+
+#code-input-js {
+    resize: none;
+    width: 100%;
+    height: 80vh;
+    outline: none;
+    border: none;
+    padding: 45px;
+    background-color: rgb(245, 245, 245);
+    font-family: "Lucida Grande",Verdana;
+    font-size: .85rem;
+    display: none;
+    color: black;
+}
+
+@keyframes refresh {
+    0% {
+        transform: scale(1.5) rotate(0deg);
+    }
+
+    100% {
+        transform: scale(1.5) rotate(360deg);
+    }
+}
+
+.refreshing {
+    animation-name: refresh;
+    animation-duration: .6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#auto-suggestions {
+    position: absolute;
+    background-color: white;
+    border: 1px solid rgb(95, 95, 95);
+    top: 0%;
+    left: 0%;
+    width: 200px;
+    height: 120px;
+    display: none;
+    border-radius: 5px;
+}
+
+/* LINE NUMBERS - CODE EDITOR */
+
+pre {
+	counter-reset: linecounter;
+}
+pre span.line{
+    counter-increment: linecounter;
+}
+pre span.line:before{
+	content: counter(linecounter);
+	width: 1.3rem;
+	display: inline-block;
+	border-right: 1px solid rgb(95, 95, 95);
+    margin-right: 5px;
+}
+
+/* TERMINAL */
+
+#terminal-area {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#terminal-controls {
+    width: 25%;
+    height: 100%;
+}
+
+#terminal-input {
+    width: 90%;
+    height: 80%;
+    background-color: rgb(245, 245, 245);
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+.terminal-line {
+    font-size: .85rem;
+}
+
+.terminal-line::before {
+    content: 'Tanner Kopel ~ ';
+    color: #FF914D;
+    font-size: .9rem;
+    padding-right: 5px;
+}
+</style>
+<script>
+// app.js
+
+let darkModeOn = false;
+
+// ------------- WORKSPACE TITLE JAVASCRIPT --------------
+
+let workspaceTitle = document.getElementById('workspace-title');
+let projectItem = document.getElementById('project-folder');
+
+// Function for selecting / highlighting text
+function selectElementContents(el) {
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+} // This function was taken from www.stackoverflow.com
+
+// Listens for click out of title input
+document.addEventListener('click', function(event) {
+    let isClickInsideElement = workspaceTitle.contains(event.target);
+    if (!isClickInsideElement) {
+
+        workspaceTitle.style.border = 'none';
+
+        if (!previewContainer.contains(event.target) && !previewTrial.contains(event.target)) {
+            if (workspaceTitle.innerText === '' || workspaceTitle.innerText === 'Untitled project') {
+                workspaceTitle.innerText = 'Untitled project';
+                workspaceTitle.style.color = 'rgb(120, 120, 120)';
+                document.title = workspaceTitle.innerText + ' - Google Code';
+                projectItem.innerText = workspaceTitle.innerText;
+            }
+    
+            else {
+                document.title = workspaceTitle.innerText + ' - Google Code';
+                projectItem.innerText = workspaceTitle.innerText;
+            }
+    
+            workspaceTitle.style.padding = '1px 6px';
+        }
+    }
+
+    if (!suggestionBox.contains(event.target)) {
+        suggestionBox.style.display = 'none';
+    }
+});
+
+// Selects title / adds border on click
+workspaceTitle.addEventListener('click', function () {
+    workspaceTitle.style.border = '2px solid #FF914D';
+    workspaceTitle.style.padding = '1px 4px';
+    selectElementContents(workspaceTitle);
+});
+
+// Detirmines text color on input
+workspaceTitle.addEventListener('input', function () {
+    if (workspaceTitle.innerText === 'Untitled project') {
+        workspaceTitle.style.color = 'rgb(125, 125, 125)';
+    }
+    else {
+        workspaceTitle.style.color = 'black';
+    }
+});
+
+// Prevents line breaks / handles pressing "enter"
+workspaceTitle.addEventListener('keydown', (e) => {
+    if (e.keyCode === 13) {
+        e.preventDefault();
+        workspaceTitle.style.border = 'none';
+
+        if (workspaceTitle.innerText === '' || workspaceTitle.innerText === 'Untitled project') {
+            workspaceTitle.innerText = 'Untitled project';
+            workspaceTitle.style.color = 'rgb(120, 120, 120)';
+            document.title = workspaceTitle.innerText + ' - Google Code';
+            projectItem.innerText = workspaceTitle.innerText;
+        }
+
+        else {
+            document.title = workspaceTitle.innerText + ' - Google Code';
+            projectItem.innerText = workspaceTitle.innerText;
+        }
+
+        workspaceTitle.style.padding = '1px 6px';
+
+        // Removes highlight selection from title
+        if (window.getSelection) {
+            if (window.getSelection().empty) {  // Chrome
+                window.getSelection().empty();
+            } else if (window.getSelection().removeAllRanges) {  // Firefox
+                window.getSelection().removeAllRanges();
+            }
+        } else if (document.selection) {  // IE?
+            document.selection.empty();
+        } // This statement was taken from www.stackoverflow.com
+    }
+});
+
+
+// ----------------- STAR ICON JAVASCRIPT -------------------
+
+let starIcon = document.getElementById('star-icon');
+
+// Returns true if item in list
+function inList(item, lst) {
+    for (let i = 0; i < lst.length; i++) {
+        if (lst[i] === item) {
+            return true;
+        }
+    }
+    return false;
+}
+
+starIcon.addEventListener('click', function () {
+
+    if (inList('far', starIcon.classList)) {
+        starIcon.classList.remove('far');
+        starIcon.classList.add('fas');
+        starIcon.style.color = '#FFC20B';
+    }
+
+    else {
+        starIcon.style.color = 'rgb(95, 95, 95)';
+        starIcon.classList.remove('fas');
+        starIcon.classList.add('far');
+    }
+});
+
+// -------------- TERMINAL UP / DOWN -----------------
+
+let terminalContainer = document.getElementById('terminal-container');
+let terminalButton = document.getElementById('preview-inpage-container');
+let control = true;
+
+terminalButton.addEventListener('click', function () {
+
+    if (control) {
+        terminalContainer.classList.remove('terminal-down');
+        terminalButton.classList.remove('button-down');
+        terminalContainer.classList.add('terminal-up');
+        terminalButton.classList.add('button-up');
+        control = false;
+    }
+
+    else {
+        terminalContainer.classList.remove('terminal-up');
+        terminalButton.classList.remove('button-up');
+        terminalContainer.classList.add('terminal-down');
+        terminalButton.classList.add('button-down');
+        control = true;
+    }
+});
+
+// ------------------- PREVIEW BUTTON ---------------------
+
+let previewContainer = document.getElementById('preview-container');
+
+previewContainer.addEventListener('click', function () {
+    //window.location.href = "preview.html";
+    showPreview();
+});
+
+// ------------------ CODE INPUT BOX ---------------------
+
+let codeInput = document.getElementById('code-input');
+
+codeInput.addEventListener('keydown', function(e) {
+    if (e.key == 'Tab') {
+      e.preventDefault();
+      var start = this.selectionStart;
+      var end = this.selectionEnd;
+  
+      // set textarea value to: text before caret + tab + text after caret
+      this.value = this.value.substring(0, start) +
+        "\t" + this.value.substring(end);
+  
+      // put caret at right position again
+      this.selectionStart =
+        this.selectionEnd = start + 1;
+    }
+}); // This function was taken from www.stackoverflow.com
+
+
+// ----------------- RIGHT NAVIGATION TABS -----------------
+
+let hierarchyTab = document.getElementById('hierarchy-tab');
+let presetsTab = document.getElementById('presets-tab');
+let hierarchyUnderline = document.getElementById('hierarchy-underline');
+let presetsUnderline = document.getElementById('presets-underline');
+let hierarchyContents = document.getElementById('hierarchy-tab-contents');
+let presetsContents = document.getElementById('presets-tab-contents');
+let presetsActive = false;
+
+function hierarchyClicked() {
+    hierarchyTab.style.color = '#FF914D';
+    hierarchyUnderline.style.backgroundColor = '#FF914D';
+    presetsUnderline.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    presetsContents.style.display = 'none';
+    hierarchyContents.style.display = 'block';
+
+    if (darkModeOn) {
+        presetsTab.style.color = 'rgb(200, 200, 200)';
+    }
+    else {
+        presetsTab.style.color = 'rgb(95, 95, 95)';
+    }
+    presetsActive = false;
+}
+
+function presetsClicked() {
+    hierarchyUnderline.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    presetsTab.style.color = '#FF914D';
+    presetsUnderline.style.backgroundColor = '#FF914D';
+    presetsContents.style.display = 'block';
+    hierarchyContents.style.display = 'none';
+
+    if (darkModeOn) {
+        hierarchyTab.style.color = 'rgb(200, 200, 200)';
+    }
+    else {
+        hierarchyTab.style.color = 'rgb(95, 95, 95)';
+    }
+    presetsActive = true;
+}
+
+
+// ----------------- HIERARCHY TREE COLLAPSE -------------------
+
+let carrots = document.querySelectorAll('.fa-chevron-down');
+let folderContents = document.querySelectorAll('.folder-contents-container');
+/*let carrotsUp = document.querySelectorAll('.fa-chevron-up');
+let carrots = carrotsDown + carrotsUp;*/
+
+function inArray(item, array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === item) {
+            return true;
+        }
+    }
+    return false;
+}
+
+for (let i = 0; i < carrots.length; i++) {
+    carrots[i].addEventListener('click', function () {
+        if (inArray('fa-chevron-down', carrots[i].classList)) {
+            carrots[i].classList.remove('fa-chevron-down');
+            carrots[i].classList.add('fa-chevron-up');
+            folderContents[i].style.display = 'none';
+        }
+        else {
+            carrots[i].classList.remove('fa-chevron-up');
+            carrots[i].classList.add('fa-chevron-down');
+            folderContents[i].style.display = 'block';
+        }
+    });
+}
+
+
+// ---------------- HIERARCHY ITEM CLICK ------------------
+
+let indexTab = document.getElementById('index-tab');
+let styleTab = document.getElementById('style-tab');
+let appTab = document.getElementById('app-tab');
+let indexItem = document.getElementById('index-item');
+let styleItem = document.getElementById('style-item');
+let appItem = document.getElementById('app-item');
+let body = document.querySelector('body');
+let tabs = document.querySelectorAll('.tab-container');
+
+function noneToTabs(thisTab) {
+    codeInput.innerHTML = '';
+    codeInput.innerText = currentTextBeforeClose;
+    codeInput.style.display = 'block'; //NEED SOMETHING HERE
+    codeInput.style.justifyContent = 'none';
+    codeInput.style.alignItems = 'none';
+    codeInput.contentEditable = 'true';
+
+    if (darkModeOn) {
+        codeInput.style.backgroundColor = 'rgb(95, 95, 95)';
+        body.style.backgroundColor = 'rgb(95, 95, 95)';
+    }
+    
+    else {
+        codeInput.style.backgroundColor = 'rgb(245, 245, 245)';
+        body.style.backgroundColor = 'rgb(245, 245, 245)';
+    }
+    //compileCode();
+
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('tab-selected');
+    }
+
+    thisTab.classList.add('tab-selected');
+}
+
+indexItem.addEventListener('click', function () {
+    indexTab.style.display = 'flex';
+    noneToTabs(indexTab);
+    changeCurrentTab(codeInput);
+});
+
+styleItem.addEventListener('click', function () {
+    styleTab.style.display = 'flex';
+    noneToTabs(styleTab);
+    changeCurrentTab(codeInputCSS);
+});
+
+appItem.addEventListener('click', function () {
+    appTab.style.display = 'flex';
+    noneToTabs(appTab);
+    changeCurrentTab(codeInputJS);
+});
+
+
+// ------------------ TAB FUNCTIONALITY -------------------
+
+function changeCurrentTab(tab) {
+    codeInput.style.display = 'none';
+    codeInputCSS.style.display = 'none';
+    codeInputJS.style.display = 'none';
+    tab.style.display = 'block';
+}
+
+let tabExits = document.querySelectorAll('.tab-exit');
+let currentTextBeforeClose = codeInput.innerText;
+
+for (let i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener('click', function (e) {
+        if (!inArray('tab-exit', e.target.classList)) {
+            for (let j = 0; j < tabExits.length; j++) {
+                if (j !== i) {
+                    tabs[j].classList.remove('tab-selected');
+                    tabs[j].classList.remove('tab-selected-darkmode');
+                }
+            }
+            if (darkModeOn) {
+                tabs[i].classList.add('tab-selected-darkmode');
+            }
+            else {
+                tabs[i].classList.add('tab-selected');
+            }
+        }
+    });
+}
+
+for (let i = 0; i < tabExits.length; i++) {
+    tabExits[i].addEventListener('click', function () {
+        tabs[i].style.display = 'none';
+        if (darkModeOn) {
+            if (inArray('tab-selected-darkmode', tabs[i].classList)) {
+                tabs[i].classList.remove('tab-selected-darkmode');
+                if (tabs[tabs.length - 1].style.display !== 'none') {
+                    tabs[tabs.length - 1].classList.add('tab-selected-darkmode');
+                    changeCurrentTab(codeInputJS);
+                }
+                else if (tabs[tabs.length - 2].style.display !== 'none') {
+                    tabs[tabs.length - 2].classList.add('tab-selected-darkmode');
+                    changeCurrentTab(codeInputCSS);
+                }
+                else if (tabs[tabs.length - 3].style.display !== 'none') {
+                    tabs[tabs.length - 3].classList.add('tab-selected-darkmode');
+                    changeCurrentTab(codeInput);
+                }
+                else {
+                    allTabsClosed();
+                }
+            }
+        }
+        else {
+            if (inArray('tab-selected', tabs[i].classList)) {
+                tabs[i].classList.remove('tab-selected');
+                if (tabs[tabs.length - 1].style.display !== 'none') {
+                    tabs[tabs.length - 1].classList.add('tab-selected');
+                    changeCurrentTab(codeInputJS);
+                }
+                else if (tabs[tabs.length - 2].style.display !== 'none') {
+                    tabs[tabs.length - 2].classList.add('tab-selected');
+                    changeCurrentTab(codeInputCSS);
+                }
+                else if (tabs[tabs.length - 3].style.display !== 'none') {
+                    tabs[tabs.length - 3].classList.add('tab-selected');
+                    changeCurrentTab(codeInput);
+                }
+                else {
+                    allTabsClosed();
+                }
+            }
+        }
+    });
+}
+
+let codeInputCSS = document.getElementById('code-input-css');
+let codeInputJS = document.getElementById('code-input-js');
+let indexExit = document.getElementById('index-exit');
+let styleExit = document.getElementById('style-exit');
+let appExit = document.getElementById('app-exit');
+
+indexTab.addEventListener('click', function (e) {
+    let clickInIndexTab = indexExit.contains(e.target);
+    if (!clickInIndexTab) {
+        changeCurrentTab(codeInput);
+    }
+});
+
+styleTab.addEventListener('click', function (e) {
+    let clickInStyleTab = styleExit.contains(e.target);
+    if (!clickInStyleTab) {
+        changeCurrentTab(codeInputCSS);
+    }
+});
+
+appTab.addEventListener('click', function (e) {
+    let clickInAppTab = appExit.contains(e.target);
+    if (!clickInAppTab) {
+        changeCurrentTab(codeInputJS);
+    }
+});
+
+function allTabsClosed() {
+    currentTextBeforeClose = codeInput.innerText;
+    codeInput.style.backgroundColor = 'rgb(220, 220, 220)';
+    codeInput.innerText = '';
+    codeInput.innerHTML = '<img src="assets/google-code-logo-grayscale.png" alt="Greyscale Logo" id="greyscale-logo">';
+    codeInput.style.display = 'flex';
+    codeInputCSS.style.display = 'none';
+    codeInputJS.style.display = 'none';
+    codeInput.style.justifyContent = 'center';
+    codeInput.style.alignItems = 'center';
+    codeInput.contentEditable = 'false';
+    if (darkModeOn) {
+        body.style.backgroundColor = 'rgb(120, 120, 120)';
+        codeInput.style.backgroundColor = 'rgb(120, 120, 120)';
+    }
+    else {
+        body.style.backgroundColor = 'rgb(220, 220, 220)';
+        codeInput.style.backgroundColor = 'rgb(220, 220, 220)';
+    }
+}
+
+// --------------- FAVICON PRESET FUNCTIONALITY ----------------
+
+let fileLinks = [];
+let previewSRC = '';
+
+function previewFile() {
+    let preview = document.getElementById('favicon-img-display-img');
+    let file = document.getElementById('favicon-file').files[0];
+    let reader = new FileReader();
+  
+    reader.onloadend = function () {
+        changeStyle();
+        fileLinks.push(reader.result);
+        preview.src = reader.result;
+        previewSRC = reader.result;
+    }
+  
+    if (file) {
+        reader.readAsDataURL(file);
+    } else {
+        preview.src = "";
+    }
+} // This function was taken from www.stackoverflow.com
+
+function split(code) {
+    let chars = [];
+    for (let i = 0; i < code.length; i++) {
+        chars.push(code[i]);
+    }
+    return chars;
+}
+
+function changeStyle() {
+    let imgPreviewContainer = document.getElementById('favicon-img-display');
+    let preview = document.getElementById('favicon-img-display-img');
+    let defaultText = document.getElementById('favicon-default-text');
+    let faviconFilename = document.getElementById('favicon-filename');
+
+    imgPreviewContainer.style.border = 'none';
+    preview.style.display = 'block';
+    defaultText.style.display = 'none';
+    faviconFilename.innerHTML = 'Drag to code';
+    faviconFilename.style.color = 'green';
+}
+
+// ------------------ PREVIEW REFRESH --------------------
+
+let refreshContainer = document.getElementById('refresh-container');
+
+refreshContainer.addEventListener('click', function () {
+    refreshContainer.classList.add('refreshing');
+    showPreview();
+});
+
+refreshContainer.addEventListener('mouseenter', function () {
+    refreshContainer.classList.remove('refreshing');
+});
+
+// ---------------- DRAGGABLE PRESETS ------------------
+
+let previewDisplayImg = document.getElementById('favicon-img-display-img');
+let draggableActive = false;
+
+draggableMouseDown(previewDisplayImg, '&lt;link type="icon" src="#"&gt;');
+
+function draggableMouseDown(object, replacement) {
+
+    function moveCode(e) {
+        let x = e.clientX;
+        let y = e.clientY;
+
+        object.style.left = (x - 30) + 'px';
+        object.style.top = (y - 30) + 'px';
+    }
+
+    object.addEventListener('mousedown', function () {
+        object.style.cursor = 'grabbing';
+        body.style.cursor = 'grabbing';
+        object.style.position = 'fixed';
+        object.style.left = '1284px';
+        object.style.top = '221px';
+        draggableActive = true;
+        document.addEventListener('mousemove', moveCode);
+    });
+
+    document.addEventListener('mouseup', function (e) {
+        body.style.cursor = 'initial';
+        object.style.cursor = 'grab';
+        object.style.position = 'initial';
+        if (e.clientX < 1251 && e.clientY > 103 && draggableActive && inArray('tab-selected', indexTab.classList)) {
+            let oldTextCode = codeInput.innerText;
+            codeInput.innerText = oldTextCode + '<link rel="icon" type="image/png" sizes="32x32" href="' + previewSRC + '">';
+        }
+        draggableActive = false;
+        document.removeEventListener('mousemove', moveCode);
+    });
+}
+
+// ------------------ TOGGLE DARK MODE --------------------
+
+let darkModeButton = document.getElementById('comment-container');
+let tabTitles = document.querySelectorAll('.tab-title');
+let tabsContainer = document.getElementById('tabs');
+let header = document.querySelector('header');
+let divider = document.querySelector('.divider');
+let comment = document.getElementById('comment');
+let gitVersion = document.getElementById('collab-history');
+let preview = document.getElementById('preview');
+let undo = document.getElementById('undo');
+let redo = document.getElementById('redo');
+let rightNav = document.getElementById('right-nav');
+let terminalInput = document.getElementById('terminal-input');
+let navButtons = document.querySelectorAll('.nav-button');
+let versionHistoryLink = document.getElementById('version-history-link');
+let folderIcon = document.getElementById('folder-icon');
+let cloudIcon = document.getElementById('cloud-icon');
+let savedMessage = document.getElementById('saved-message');
+let folderContainer = document.querySelector('.folder-container');
+let hierarchyTree = document.getElementById('hierarchy-tree');
+let faviconPresetTitle = document.getElementById('favicon-preset-title');
+let faviconFilename = document.getElementById('favicon-filename');
+let faviconPreview = document.getElementById('favicon-img-display');
+let controlTitles = document.querySelectorAll('.control-title');
+let topNavDividers = document.querySelectorAll('.top-nav-divider-line');
+
+darkModeButton.addEventListener('click', function () {
+    if (codeInput.style.color !== 'white') {
+        darkModeButton.style.backgroundColor = 'rgb(95, 95, 95)';
+        toDarkMode();
+    }
+
+    else {
+        toLightMode();
+    }
+});
+
+function toDarkIcons() {
+
+    let icons = [comment, gitVersion, preview, undo, redo];
+    let iconContainers = [document.getElementById('comment-container'), document.getElementById('collab-history-container'), document.getElementById('preview-container'), document.getElementById('undo-container'), document.getElementById('redo-container')];
+
+    for (let i = 0; i < icons.length; i++) {
+        icons[i].style.color = 'rgb(240, 240, 240)';
+        icons[i].style.fill = 'rgb(240, 240, 240)';
+        iconContainers[i].addEventListener('mouseenter', function () {
+            iconContainers[i].style.backgroundColor = 'rgb(95, 95, 95)';
+        });
+        iconContainers[i].addEventListener('mouseleave', function () {
+            iconContainers[i].style.backgroundColor = 'rgba(95, 95, 95, 0)';
+        });
+        darkModeButton.addEventListener('click', function () {
+            darkModeButton.style.backgroundColor = 'rgb(240, 240, 240)';
+        });
+    }
+}
+
+function toLightIcons() {
+
+    let icons = [comment, gitVersion, preview, undo, redo];
+    let iconContainers = [document.getElementById('comment-container'), document.getElementById('collab-history-container'), document.getElementById('preview-container'), document.getElementById('undo-container'), document.getElementById('redo-container')];
+
+    for (let i = 0; i < icons.length; i++) {
+        icons[i].style.color = 'rgb(95, 95, 95)';
+        icons[i].style.fill = 'rgb(95, 95, 95)';
+        iconContainers[i].addEventListener('mouseenter', function () {
+            iconContainers[i].style.backgroundColor = 'rgb(240, 240, 240)';
+        });
+        iconContainers[i].addEventListener('mouseleave', function () {
+            iconContainers[i].style.backgroundColor = 'rgba(240, 240, 240, 0)';
+        });
+        darkModeButton.addEventListener('click', function () {
+            darkModeButton.style.backgroundColor = 'rgb(95, 95, 95)';
+        });
+    }
+}
+
+function toDarkMode() {
+    let selectedTab = document.querySelector('.tab-selected');
+    darkModeOn = true;
+
+    codeInput.style.backgroundColor = 'rgb(95, 95, 95)';
+    codeInput.style.color = 'white';
+    codeInputCSS.style.backgroundColor = 'rgb(95, 95, 95)';
+    codeInputCSS.style.color = 'white';
+    codeInputJS.style.backgroundColor = 'rgb(95, 95, 95)';
+    codeInputJS.style.color = 'white';
+    //selectedTab.style.backgroundColor = 'rgb(95, 95, 95)';
+    body.style.backgroundColor = 'rgb(95, 95, 95)';
+    tabsContainer.style.backgroundColor = 'rgb(130, 130, 130)';
+    terminalButton.style.backgroundColor = 'rgb(235, 235, 235)';
+    suggestionBox.style.backgroundColor = 'rgb(150, 150, 150)';
+    suggestionBox.style.border = '1px solid rgb(235, 235, 235)';
+    header.style.backgroundColor = 'rgb(75, 75, 75)';
+    header.style.color = 'white';
+    divider.style.backgroundColor = 'rgb(110, 110, 110)';
+    rightNav.style.borderLeft = '1px solid rgb(110, 110, 110)';
+    topNavDividers[0].style.border = '.5px solid rgb(110, 110, 110)';
+    topNavDividers[1].style.border = '.5px solid rgb(110, 110, 110)';
+    topNavDividers[2].style.border = '.5px solid rgb(110, 110, 110)';
+    toDarkIcons();
+    rightNav.style.backgroundColor = 'rgb(75, 75, 75)';
+    terminalContainer.style.backgroundColor = 'rgb(75, 75, 75)';
+    terminalInput.style.backgroundColor = 'rgb(95, 95, 95)';
+    terminalInput.style.color = 'white';
+    versionHistoryLink.style.color = 'white';
+    workspaceTitle.style.color = 'white';
+    starIcon.style.color = 'white';
+    folderIcon.style.color = 'white';
+    cloudIcon.style.color = 'white';
+    savedMessage.style.color = 'white';
+    folderContainer.style.backgroundColor = 'rgb(95, 95, 95)';
+    hierarchyTree.style.color = 'white';
+    faviconPresetTitle.style.color = 'white';
+    faviconFilename.style.color = 'white';
+    faviconPreview.style.color = 'rgb(95, 95, 95)';
+    faviconPreview.style.border = '2px solid rgb(95, 95, 95)';
+
+    if (presetsActive) {
+        hierarchyTab.style.color = 'rgb(200, 200, 200)';
+    }
+    else {
+        presetsTab.style.color = 'rgb(200, 200, 200)';
+    }
+
+    darkModeButton.title = 'Light Mode';
+
+    for (let i = 0; i < tabs.length; i++) {
+        //tabs[i].style.backgroundColor = 'rgb(120, 120, 120)';
+        tabTitles[i].style.color = 'white';
+        tabExits[i].style.color = 'white';
+    }
+
+    for (let i = 0; i < navButtons.length; i++) {
+        navButtons[i].style.backgroundColor = 'rgb(75, 75, 75)';
+        navButtons[i].style.color = 'white';
+    }
+
+    for (let i = 0; i < controlTitles.length; i++) {
+        controlTitles[i].style.color = 'white';
+    }
+}
+
+function toLightMode() {
+    let selectedTab = document.querySelector('.tab-selected');
+    darkModeOn = false;
+
+    codeInput.style.backgroundColor = 'rgb(245, 245, 245)';
+    codeInput.style.color = 'black';
+    codeInputCSS.style.backgroundColor = 'rgb(245, 245, 245)';
+    codeInputCSS.style.color = 'black';
+    codeInputJS.style.backgroundColor = 'rgb(245, 245, 245)';
+    codeInputJS.style.color = 'black';
+    //selectedTab.style.backgroundColor = 'rgb(245, 245, 245)';
+    body.style.backgroundColor = 'rgb(245, 245, 245)';
+    tabsContainer.style.backgroundColor = 'rgb(220, 220, 220)';
+    terminalButton.style.backgroundColor = 'rgb(245, 245, 245)';
+    suggestionBox.style.backgroundColor = 'white';
+    suggestionBox.style.border = '1px solid rgb(95, 95, 95)';
+    header.style.backgroundColor = 'white';
+    header.style.color = 'rgb(95, 95, 95)';
+    divider.style.backgroundColor = 'lightgrey';
+    rightNav.style.borderLeft = '1px solid rgb(199, 199, 199)';
+    topNavDividers[0].style.border = '.5px solid rgb(199, 199, 199)';
+    topNavDividers[1].style.border = '.5px solid rgb(199, 199, 199)';
+    topNavDividers[2].style.border = '.5px solid rgb(199, 199, 199)';
+    toLightIcons();
+    rightNav.style.backgroundColor = 'white';
+    terminalContainer.style.backgroundColor = 'white';
+    terminalInput.style.backgroundColor = 'rgb(245, 245, 245)';
+    terminalInput.style.color = 'black';
+    versionHistoryLink.style.color = 'rgb(95, 95, 95)';
+    workspaceTitle.style.color = 'black';
+    starIcon.style.color = 'rgb(95, 95, 95)';
+    folderIcon.style.color = 'rgb(95, 95, 95)';
+    cloudIcon.style.color = 'rgb(95, 95, 95)';
+    savedMessage.style.color = 'rgb(95, 95, 95)';
+    folderContainer.style.backgroundColor = 'rgb(240, 240, 240)';
+    hierarchyTree.style.color = 'rgb(95, 95, 95)';
+    faviconPresetTitle.style.color = 'rgb(95, 95, 95)';
+    faviconFilename.style.color = 'rgb(95, 95, 95)';
+    faviconPreview.style.color = 'rgb(220, 220, 220)';
+    faviconPreview.style.border = '2px solid rgb(220, 220, 220)';
+
+    if (presetsActive) {
+        hierarchyTab.style.color = 'rgb(95, 95, 95)';
+    }
+    else {
+        presetsTab.style.color = 'rgb(95, 95, 95)';
+    }
+
+    darkModeButton.title = 'Dark Mode';
+
+    for (let i = 0; i < tabs.length; i++) {
+        //tabs[i].style.backgroundColor = 'rgb(230, 230, 230)';
+        tabTitles[i].style.color = 'rgb(95, 95, 95)';
+        tabExits[i].style.color = 'rgb(95, 95, 95)';
+    }
+
+    for (let i = 0; i < navButtons.length; i++) {
+        navButtons[i].style.backgroundColor = 'white';
+        navButtons[i].style.color = 'black';
+    }
+
+    for (let i = 0; i < controlTitles.length; i++) {
+        controlTitles[i].style.color = 'rgb(95, 95, 95)';
+    }
+}
+</script> <!-- Main Javascript File - Animations/Basic Functionality -->
+<script>
+// undoRedo.js
+</script> <!-- Undo and Redo functionality -->
+<script>
+// compile.js
+
+/*function wrapLines (el){
+	let text = el.innerText.split('\n');
+    let newText = '<pre>';
+    for (let i = 0; i < text.length; i++) {
+        newText +='<span class="line">' + text[i] + '</span><br>';
+    }
+    console.log(newText + '</pre>');
+    codeInput.innerHTML = newText + '</pre>';
+    placeCaretAtEnd(codeInput);
+}
+
+function wrapLines (el){
+	var text = el.textContent.split('\n');
+	var range = document.createRange();
+	var pointer = 0; // start of text
+	el.textContent.split('\n').forEach(function(line, i){
+		var len = line.length;
+		setBounds (pointer, pointer+len); // sets range to the characters of the line
+		var wrapper = document.createElement('span');
+		wrapper.setAttribute('class', 'line');
+		wrapper.appendChild(range.extractContents()); // pulls the contents of the range out of the document and into wrapper
+		range.insertNode(wrapper); // and put back the wrapped line
+		pointer += len+1; // skip the newline
+	});
+	// now, we're left with a bunch of empty spans/other elements that were split across lines and the browser divided them into three parts (first line, newline character, second line)
+	// those mess up the odd/even calculations. Replace them with plain text.
+	for (var node = el.firstChild; node; node = node.nextSibling){
+		if (node.nodeType != 3 && node.getAttribute('class') != 'line'){
+			var replacement = document.createTextNode(node.textContent);
+			el.replaceChild(replacement, node);
+			node = replacement;
+		}
+	}
+	
+	function setBounds (start, end){
+		// since the browser throws an error if we try to move the beginning past the end (unlike IE, which just adusts the end)
+		// we have to reset the range to cover the entire element, then move the start, then move the end to the start, then move the end
+		range.selectNodeContents(el);
+		moveBoundary (start, 'start');
+		range.collapse (true);
+		moveBoundary (end-start, 'end');
+	}
+	function moveBoundary (n, start){
+		// move the boundary n characters forward, up to the end of the element. Forward only!
+		//  start is 'start' or 'end', and is used to create the appropriate method names ('startContainer' or 'endContainer' etc.)
+		// if the start is moved after the end, then an exception is raised
+		if (n <= 0) return;
+		var startNode = range[start+'Container'];
+		// we may be starting somewhere into the text
+		if (startNode.nodeType == 3) n += range[start+'Offset'];
+		// nodeIterators from http://www.w3.org/TR/DOM-Level-2-Traversal-Range/traversal.html
+		var iter = document.createNodeIterator(el, 4  SHOW_TEXT ), node;
+		while (node = iter.nextNode()){
+			if (startNode.compareDocumentPosition(node) & 2 DOCUMENT_POSITION_PRECEDING) continue;
+			if (n <= node.nodeValue.length){
+				// we found the last character!
+				range[start == 'start' ? 'setStart' :'setEnd'](node, n);
+				return;
+			} else{
+				n -= node.nodeValue.length; // eat these characters
+			}
+		}
+	}
+}
+*/
+
+function getCaretCoordinates() {
+    let x = 0,
+    y = 0;
+    const isSupported = typeof window.getSelection !== "undefined";
+    if (isSupported) {
+      const selection = window.getSelection();
+      if (selection.rangeCount !== 0) {
+        const range = selection.getRangeAt(0).cloneRange();
+        range.collapse(true);
+        const rect = range.getClientRects()[0];
+        if (rect) {
+          x = rect.left;
+          y = rect.top;
+        }
+      }
+    }
+    return [x, y];
+} // This function was taken from https://javascript.plainenglish.io/how-to-find-the-caret-inside-a-contenteditable-element-955a5ad9bf81
+
+function getCaretIndex(element) {
+    let position = 0;
+    const isSupported = typeof window.getSelection !== "undefined";
+    if (isSupported) {
+      const selection = window.getSelection();
+      if (selection.rangeCount !== 0) {
+        const range = window.getSelection().getRangeAt(0);
+        const preCaretRange = range.cloneRange();
+        preCaretRange.selectNodeContents(element);
+        preCaretRange.setEnd(range.endContainer, range.endOffset);
+        position = preCaretRange.toString().length;
+      }
+    }
+    return position;
+} // This function was taken from https://javascript.plainenglish.io/how-to-find-the-caret-inside-a-contenteditable-element-955a5ad9bf81
+
+let suggestionBox = document.getElementById('auto-suggestions');
+
+/*placeCaretAtEnd(codeInput);
+let lineYStart = getCaretCoordinates()[1];
+console.log(lineYStart);*/
+
+function getWordAtCaret(caretIndex) {
+    let characters = split(codeInput.innerText);
+    /*let i = 1;
+    while (characters[caretIndex - i] !== ' ' || characters[caretIndex - i] !== '<') {
+        i++;
+    }
+    i--;
+    let firstLetterIndex = caretIndex - i;*/
+    let i = 1;
+    while (characters[characters.length - i] !== ' ' || characters[characters.length - i] !== '<') {
+        if (i > 10) {
+            break;
+        }
+        i++;
+    }
+    let firstLetterIndex = characters.length - i;
+    console.log(firstLetterIndex);
+}
+
+function displaySuggestionBox(coordinates) {
+    let characters = split(codeInput.innerText);
+    let x = coordinates[0];
+    let y = coordinates[1];
+    let lineVariation = ((Math.ceil(y) - 148) / 18) - 1;
+    if (x === 0 && y === 0) {
+        suggestionBox.style.display = 'none';
+    }
+    else {
+        let caretIndex = getCaretIndex(codeInput) + lineVariation;
+
+        if (characters[caretIndex] !== '>' && characters[caretIndex] !== ' ') {
+            suggestionBox.style.display = 'block';
+            suggestionBox.style.left = x + 'px';
+            suggestionBox.style.top = (y + 25) + 'px';
+            getWordAtCaret(caretIndex);
+        }
+        else {
+            suggestionBox.style.display = 'none';
+        }
+    }
+}
+
+/* DIVIDER */
+
+let firstTime = true;
+
+function split(code) {
+    let chars = [];
+    for (let i = 0; i < code.length; i++) {
+        chars.push(code[i]);
+    }
+    return chars;
+}
+
+function removeUnicode(code) {
+    for (let i = 0; i < code.length; i++) {
+        if (code[i] === '&' && code[i+1] === 'l' && code[i+2] === 't' && code[i+3] === ';') {
+            code.splice(i, 4, '<');
+        }
+
+        if (code[i] === '&' && code[i+1] === 'g' && code[i+2] === 't' && code[i+3] === ';') {
+            code.splice(i, 4, '>');
+        }
+    }
+    return code;
+}
+
+function colorOpenClose(code) {
+    for (let i = 0; i < code.length; i++) {
+        if (code[i] === '<') {
+            code[i] = '<span class="open-closePreset">&lt;</span>';
+        }
+        if (code[i] === '>') {
+            code[i] = '<span class="open-closePreset">&gt;</span>';
+        }
+        if (code[i] === '/') {
+            code[i] = '<span class="open-closePreset">/</span>';
+        }
+    }
+    return code;
+}
+
+function colorTagName(code) {
+    for (let i = 0; i < code.length; i++) {
+        if (code[i] === '<span class="open-closePreset">&lt;</span>') {
+            if (code[i+1] === '<span class="open-closePreset">/</span>') {
+                i++;
+            }
+            let j = 1;
+            let tagName = '';
+            while (code[i + j] !== ' ' && code[i + j] !== '<span class="open-closePreset">&gt;</span>') {
+                tagName += code[i + j];
+                j++;
+            }
+            code.splice(i+1, tagName.length, '<span class="tag-namePreset">'+tagName+'</span>');
+        }
+    }
+    return code;
+}
+
+function colorAttributes(code) {
+    for (let i = 0; i < code.length; i++) {
+        if (code[i] === ' ') {
+            let j = 1;
+            let attributeName = '';
+            while (code[i + j] !== ' ' && code[i + j] !== '<span class="open-closePreset">&gt;</span>' && code[i + j] !== '=' && code[i + j] !== '<span class="open-closePreset">&lt;</span>') {
+                attributeName += code[i + j];
+                j++;
+            }
+            code.splice(i+1, attributeName.length, '<span class="attribute-namePreset">'+attributeName+'</span>');
+        }
+    }
+    return code;
+}
+
+function backToString(code) {
+    let newStr = '';
+    for (let i = 0; i < code.length; i++) {
+        newStr += code[i];
+    }
+    return newStr;
+}
+
+function placeCaretAtEnd(el) {
+    el.focus();
+    if (typeof window.getSelection != "undefined"
+            && typeof document.createRange != "undefined") {
+        var range = document.createRange();
+        range.selectNodeContents(el);
+        range.collapse(false);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+    } else if (typeof document.body.createTextRange != "undefined") {
+        var textRange = document.body.createTextRange();
+        textRange.moveToElementText(el);
+        textRange.collapse(false);
+        textRange.select();
+    }
+} // This function was taken from www.stackoverflow.com
+
+function compileCode() {
+    let textBox = codeInput.innerText;
+    let characters = split(textBox);
+    let removedUnicode = removeUnicode(characters);
+    let addOpenClose = colorOpenClose(removedUnicode);
+    //let addTagNames = colorTagName(addOpenClose);
+    //let addAttributes = colorAttributes(addTagNames);
+    let newCodeString = backToString(addOpenClose);//addAttributes);
+
+    if (newCodeString[newCodeString.length - 1] !== textBox[textBox.length - 1]) {
+        codeInput.innerHTML = newCodeString;
+        placeCaretAtEnd(codeInput);
+    }
+    else if (firstTime === true) {
+        codeInput.innerHTML = newCodeString;
+        placeCaretAtEnd(codeInput);
+        firstTime = false;
+    }
+}
+
+//compileCode();
+</script> <!-- Personal syntax highlighting -->
+
+<script>
+// preview.js
+
+let phoneInput = document.getElementById('phone-input');
+let phoneSVG = document.getElementById('phone');
+let tabletInput = document.getElementById('tablet-input');
+let tabletSVG = document.getElementById('tablet');
+let computerInput = document.getElementById('computer-input');
+let computerSVG = document.getElementById('computer');
+let previewContainer2 = document.getElementById('preview-container-2');
+
+function phoneClicked() {
+    if (phoneInput.checked) {
+        phoneSVG.style.color = 'white';
+        phoneSVG.style.fill = 'white';
+        previewContainer2.style.width = '425px';
+        previewContainer2.style.height = '700px';
+    }
+
+    else {
+        phoneSVG.style.color = 'darkgrey';
+        phoneSVG.style.fill = 'darkgrey';
+    }
+}
+
+function tabletClicked() {
+    if (tabletInput.checked) {
+        tabletSVG.style.color = 'white';
+        tabletSVG.style.fill = 'white';
+        previewContainer2.style.width = '768px';
+        previewContainer2.style.height = '800px';
+    }
+
+    else {
+        tabletSVG.style.color = 'darkgrey';
+        tabletSVG.style.fill = 'darkgrey';
+    }
+}
+
+function computerClicked() {
+    if (computerInput.checked) {
+        computerSVG.style.color = 'white';
+        computerSVG.style.fill = 'white';
+        previewContainer2.style.width = '100%';
+        previewContainer2.style.height = '100%';
+    }
+
+    else {
+        computerSVG.style.color = 'darkgrey';
+        computerSVG.style.fill = 'darkgrey';
+    }
+}
+
+let previewTrial = document.getElementById('preview-trial');
+let exit = document.getElementById('exit');
+
+function findTitle() {
+    let codeInputList = split(codeInput.innerText);
+    let titleString = '';
+    
+    for (let i = 0; i < codeInputList.length; i++) {
+        if (codeInputList[i] === '<' && codeInputList[i + 1] === 't' && codeInputList[i + 2] === 'i' && codeInputList[i + 3] === 't' && codeInputList[i + 4] === 'l' && codeInputList[i + 5] === 'e' && codeInputList[i + 6] === '>') {
+            letter = i + 7;
+            while (codeInputList[letter] !== '<') {
+                titleString += codeInputList[letter];
+                letter++;
+            }
+            break;
+        }
+    }
+    return titleString;
+}
+
+function removeWhitespace(item) {
+    itemList = split(item);
+    for (let i = 0; i < itemList.length; i++) {
+        if (itemList[i] === '{') {
+            let j = i + 1;
+            while (itemList[j] !== '}') {
+                if (itemList[j] === ' ') {
+                    itemList.splice(j, 1);
+                }
+                j++;
+            }
+        }
+    }
+    console.log(itemList);
+    return backToString(itemList);
+}
+
+function showPreview() {
+    previewTrial.style.display = 'flex';
+
+    if (findTitle() !== '') {
+        document.title = findTitle();
+    }
+
+    else {
+        document.title = 'index.html';
+    }
+
+    previewContainer2.innerHTML = '<iframe id="preview-area"></iframe>';
+
+    let frame = document.getElementById('preview-area').contentWindow.document;
+    let htmlCode = codeInput.innerText;
+    let cssCode = '<style>' + codeInputCSS.innerText + '</style>';
+    let jsCode = '<script>' + codeInputJS.innerText; + '</' + 'script>';
+
+    frame.open();
+    frame.write(htmlCode + cssCode + jsCode);
+    frame.close();
+}
+
+exit.addEventListener('click', function () {
+    previewTrial.style.display = 'none';
+    document.title = workspaceTitle.innerText + ' - Google Code';
+    refreshContainer.classList.remove('refreshing');
+});
+
+/*
+THINGS LEFT TO DO:
+1. Syntax highlighting
+2. Autocomplete tags
+3. Suggestions box
+4. Undo and redo functionality
+5. Git versioning
+6. Preset layouts
+7. Toolbar dropdown menus
+8. Template page
+9. Draggable tabs for layouts
+10. Darkmode
+11. Divider between tags
+12. Terminal
+13. Make hierarchy editable
+14. Allow file renaming
+15. Mobile compatibility
+16. Database for storing code
+
+
+CURRENT PROBLEMS:
+1. Javascript only works when input box clicked before preview
+2. 100% width or 100vh height is not correct in iframe
+*/
+</script>
+</html>

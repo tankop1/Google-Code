@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pre_file.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> <!-- Importing font from Google -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/android-chrome-512x512.png"> <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#ec8900">
+    <meta name="msapplication-TileColor" content="#ff7b20">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://kit.fontawesome.com/0bb23f7c87.js" crossorigin="anonymous"></script> <!--SVG Icon Kit-->
+    <title>Google Code</title>
+</head>
+<body>
+    <header>
+        <div id="top-section-1">
+            <div id="menu-button-container">
+                <i id="menu-icon" class="fas fa-bars"></i>
+            </div>
+            <a href="pre_file.html"><div id="title-container">
+                <img id="logo" src="assets/google-code-logo.PNG" alt="Logo">
+                <p id="title">Code</p>
+            </div></a>
+        </div>
+        <div id="search-container">
+            <div id="search-icon-container">
+                <i id="search-icon" class="fas fa-search"></i>
+            </div>
+            <input autocomplete="off" spellcheck="false" id="search-bar" type="text" placeholder="Search" name="search">
+            <div id="search-exit-container">
+                <p id="search-exit">&times;</p>
+            </div>
+        </div>
+        <div id="top-section-2">
+            <div id="apps-container">
+                <svg id="apps-icon" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>
+            </div>
+            <img id="account-icon" src="https://lh3.googleusercontent.com/ogw/ADGmqu_RkfDgi9V4F4wJJNxngisrJMP0N-42AfJ5cVdU=s32-c-mo" alt="Account Icon" title="Tanner Kopel">
+        </div>
+    </header>
+    <div id="template-header">
+        <p id="template-header-title">Template gallery</p>
+    </div>
+    <section>
+        <div id="templates-container">
+            <div id="top-row">
+                <p id="intro">Start a new project</p>
+                <div id="top-right">
+                    <button id="template-button"><span style="color: rgb(65, 65, 65);">Template gallery</span> <div id="angles">
+                        <i class="fas fa-angle-up"></i>
+                        <i class="fas fa-angle-down"></i>
+                    </div></button>
+                    <div id="divider"></div>
+                    <div id="template-menu-container">
+                        <i class="fas fa-ellipsis-v" id="template-menu-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div id="template-cards">
+                <div class="template-card-container">
+                    <a href="main.html"><div id="blank-template" class="template"></div></a>
+                    <p class="template-title">Blank</p>
+                </div>
+                <div class="template-card-container">
+                    <div id="template-1" class="template"></div>
+                    <p class="template-title">Class</p>
+                </div>
+                <div class="template-card-container">
+                    <div id="template-2" class="template"></div>
+                    <p class="template-title">Group</p>
+                </div>
+                <div class="template-card-container">
+                    <div id="template-3" class="template"></div>
+                    <p class="template-title">Business</p>
+                </div>
+                <div class="template-card-container">
+                    <div id="template-4" class="template"></div>
+                    <p class="template-title">Project</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main>
+        <div id="recent-top-row">
+            <p id="recent-intro">Recent Projects</p>
+            <div id="recent-top-right">
+                <button id="recent-button"><span id="dropdown-title" style="color: rgb(65, 65, 65);">Owned by anyone</span><i class="fas fa-caret-down" id="recent-button-icon"></i></button>
+                <div id="dropdown-contents">
+                    <div id="row-1" class="dropdown-row">
+                        <i class="fas fa-check" id="check-1"></i><p id="dropdown-title-1">Owned by anyone</p>
+                    </div>
+                    <div id="row-2" class="dropdown-row">
+                        <i class="fas fa-check" id="check-2"></i><p id="dropdown-title-2">Owned by me</p>
+                    </div>
+                    <div id="row-3" class="dropdown-row">
+                        <i class="fas fa-check" id="check-3"></i><p id="dropdown-title-3">Not owned by me</p>
+                    </div>
+                </div>
+                <div id="recent-icons">
+                    <div id="recent-list-container">
+                        <i class="fas fa-list" id="recent-list-icon"></i>
+                    </div>
+                    <div id="recent-sort-container">
+                        <i class="fas fa-sort-alpha-down" id="recent-sort-icon"></i>
+                    </div>
+                    <div id="recent-folder-container">
+                        <i class="far fa-folder" id="recent-folder-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div id="projects">
+            <div class="project-container">
+                <div class="project-top">
+                    <div class="project-preview" id="project-preview-1"></div>
+                </div>
+                <div class="project-bottom">
+                    <p class="project-title">Untitled project</p>
+                    <div class="project-info">
+                        <img class="code-icon" src="assets/google-code-favicon.png" alt="Google Code Icon">
+                        <i class="fas fa-users share-icon"></i>
+                        <p class="project-date">Opened 2:04 PM</p>
+                        <div class="project-settings-container">
+                            <i class="fas fa-ellipsis-v project-settings"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-container">
+                <div class="project-top">
+                    <div class="project-preview" id="project-preview-2"></div>
+                </div>
+                <div class="project-bottom">
+                    <p class="project-title">History Project</p>
+                    <div class="project-info">
+                        <img class="code-icon" src="assets/google-code-favicon.png" alt="Google Code Icon">
+                        <i class="fas fa-users share-icon"></i>
+                        <p class="project-date">Opened April 1st</p>
+                        <div class="project-settings-container">
+                            <i class="fas fa-ellipsis-v project-settings"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="pre_file.js"></script>
+</html>

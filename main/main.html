@@ -15,14 +15,13 @@
     <meta name="msapplication-TileColor" content="#ff7b20">
     <meta name="theme-color" content="#ffffff">
     <script src="https://kit.fontawesome.com/0bb23f7c87.js" crossorigin="anonymous"></script> <!--SVG Icon Kit-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script> <!-- Allows for code highlighting -->
     <title>Untitled project - Google Code</title>
 </head>
 <body>
     <header>
         <div id="top-row">
             <div id="group-1">
-                <a href="#" title="Code Home"><img id="logo" src="google-code-logo.PNG" alt="Logo"></a>
+                <a href="pre_file.html" title="Code Home"><img id="logo" src="assets/google-code-logo.PNG" alt="Logo"></a>
                 <div id="top-left">
                     <div id="grouping">
                         <div id="workspace-title-container">
@@ -36,7 +35,7 @@
                                 <i class="far fa-folder-open" id="folder-icon"></i>
                             </div>
                             <div id="cloud-icon-container" class="icon-container" title="File Status">
-                                <i class="fas fa-cloud-download-alt"></i>
+                                <i class="fas fa-cloud-download-alt" id="cloud-icon"></i>
                                 <p id="saved-message">Saving...</p>
                             </div>
                         </div>
@@ -44,8 +43,95 @@
                     <nav>
                         <div id="nav-buttons">
                             <button id="file-button" class="nav-button">File</button>
+                            <div id="file-dropdown" class="dropdown">
+                                <div id="file-share-container" class="file-item-container">
+                                    <p id="file-share" class="file-item">Share</p>
+                                </div>
+                                <hr class="file-divider"/>
+                                <div id="file-new-container" class="file-item-container">
+                                    <p id="file-new" class="file-item">New</p>
+                                </div>
+                                <div id="file-open-container" class="file-item-container">
+                                    <p id="file-open" class="file-item">Open <span class="shortcut"> Ctrl+O</span></p>
+                                </div>
+                                <div id="file-copy-container" class="file-item-container">
+                                    <p id="file-copy" class="file-item">Make a copy</p>
+                                </div>
+                                <hr class="file-divider"/>
+                                <div id="file-email-container" class="file-item-container">
+                                    <p id="file-email" class="file-item">Email</p>
+                                </div>
+                                <div id="file-download-container" class="file-item-container">
+                                    <p id="file-download" class="file-item">Download</p>
+                                </div>
+                                <div id="file-version-history-container" class="file-item-container">
+                                    <p id="file-version-history" class="file-item">Version History</p>
+                                </div>
+                                <hr class="file-divider"/>
+                                <div id="file-rename-container" class="file-item-container">
+                                    <p id="file-rename" class="file-item">Rename</p>
+                                </div>
+                                <div id="file-move-container" class="file-item-container">
+                                    <p id="file-move" class="file-item">Move</p>
+                                </div>
+                                <hr class="file-divider"/>
+                                <div id="file-publish-container" class="file-item-container">
+                                    <p id="file-publish" class="file-item">Publish a site</p>
+                                </div>
+                                <hr class="file-divider"/>
+                                <div id="file-print-container" class="file-item-container">
+                                    <p id="file-print" class="file-item">Print <span class="shortcut"> Ctrl+P</span></p>
+                                </div>
+                            </div>
                             <button id="edit-button" class="nav-button">Edit</button>
+                            <div id="edit-dropdown" class="dropdown">
+                                <div id="edit-undo-container" class="edit-item-container">
+                                    <p id="edit-undo" class="edit-item">Undo <span class="edit-shortcut"> Ctrl+Z</span></p>
+                                </div>
+                                <div id="edit-redo-container" class="edit-item-container">
+                                    <p id="edit-redo" class="edit-item">Redo <span class="edit-shortcut"> Ctrl+Y</span></p>
+                                </div>
+                                <hr class="edit-divider"/>
+                                <div id="edit-cut-container" class="edit-item-container">
+                                    <p id="edit-cut" class="edit-item">Cut <span class="edit-shortcut" id="cut-shortcut"> Ctrl+X</span></p>
+                                </div>
+                                <div id="edit-copy-container" class="edit-item-container">
+                                    <p id="edit-copy" class="edit-item">Copy <span class="edit-shortcut"> Ctrl+C</span></p>
+                                </div>
+                                <div id="edit-paste-container" class="edit-item-container">
+                                    <p id="edit-paste" class="edit-item">Paste <span class="edit-shortcut" id="paste-shortcut"> Ctrl+P</span></p>
+                                </div>
+                                <hr class="edit-divider"/>
+                                <div id="edit-find-container" class="edit-item-container">
+                                    <p id="edit-find" class="edit-item">Find <span class="edit-shortcut" id="find-shortcut"> Ctrl+F</span></p>
+                                </div>
+                            </div>
                             <button id="view-button" class="nav-button">View</button>
+                            <div id="view-dropdown" class="dropdown">
+                                <div id="view-print-layout-container" class="view-item-container">
+                                    <p id="view-print-layout" class="view-item">Print layout</p>
+                                </div>
+                                <div id="view-mode-container" class="view-item-container">
+                                    <p id="view-mode" class="view-item">Mode</p>
+                                </div>
+                                <hr class="view-divider"/>
+                                <div id="view-horizontal-container" class="view-item-container">
+                                    <p id="view-horizontal" class="view-item">Horizontal layout</p>
+                                </div>
+                                <div id="view-vertical-container" class="view-item-container">
+                                    <p id="view-vertical" class="view-item">Vertical layout</p>
+                                </div>
+                                <div id="view-darkmode-container" class="view-item-container">
+                                    <p id="view-darkmode" class="view-item">Dark Mode</p>
+                                </div>
+                                <div id="view-lightmode-container" class="view-item-container">
+                                    <p id="view-lightmode" class="view-item">Light Mode</p>
+                                </div>
+                                <hr class="view-divider"/>
+                                <div id="view-fullscreen-container" class="view-item-container">
+                                    <p id="view-fullscreen" class="view-item">Fullscreen</p>
+                                </div>
+                            </div>
                             <button id="tools-button" class="nav-button">Tools</button>
                             <button id="help-button" class="nav-button">Help</button>
                         </div>
@@ -70,7 +156,7 @@
                     <i class="fas fa-code-branch" id="collab-history"></i>
                 </div>
                 <div id="share-button" title="Share"><i class="fas fa-lock" id="lock-icon"></i> Share</div>
-                <img id="account-icon" src="https://lh3.google.com/u/1/ogw/ADGmqu_sv1m_V8MC3TMjdt1jlvkB1MpsbtUZJH3cZPfz=s32-c-mo" alt="Account Icon" title="Tanner Kopel">
+                <img id="account-icon" src="https://lh3.googleusercontent.com/ogw/ADGmqu_RkfDgi9V4F4wJJNxngisrJMP0N-42AfJ5cVdU=s32-c-mo" alt="Account Icon" title="Tanner Kopel">
             </div>
         </div>
         <hr class="divider"/>
@@ -81,12 +167,12 @@
                 <div class="tab-container tab-selected" id="index-tab">
                     <i class="fab fa-html5 tab-icon" id="initial-tab-icon"></i>
                     <p class="tab-title" id="initial-tab-title">index.html</p>
-                    <p class="tab-exit">&times;</p>
+                    <p class="tab-exit" id="index-exit">&times;</p>
                 </div>
                 <div class="tab-container" id="style-tab">
                     <i class="fab fa-css3 tab-icon"></i>
                     <p class="tab-title">style.css</p>
-                    <p class="tab-exit">&times;</p>
+                    <p class="tab-exit" id="style-exit">&times;</p>
                 </div>
                 <!--<div id="tab-divider-container">
                     <span id="tab-divider"></span>
@@ -94,12 +180,23 @@
                 <div class="tab-container" id="app-tab">
                     <i class="fab fa-js-square tab-icon"></i>
                     <p class="tab-title">app.js</p>
-                    <p class="tab-exit">&times;</p>
+                    <p class="tab-exit" id="app-exit">&times;</p>
                 </div>
             </div>
-            <div id="code-area">
-                <p id="code-input" spellcheck="false" oninput="compileCode();" contenteditable>
-&lt;!DOCTYPE html&gt;
+            <div id="horizontal-layout">
+                <div id="code-area">
+                    <div id="auto-suggestions"></div>
+                    <div id="code-input" spellcheck="false" oninput="displaySuggestionBox(getCaretCoordinates()); //compileCode();//wrapLines(document.getElementById('pre-input'));" contenteditable><pre id="pre-input"><code data-language="html">&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&nbsp;&lt;head&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="style.css"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;&lt;/title&gt;<br>&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>&nbsp;&nbsp;&nbsp;&lt;body&gt;&lt;/body&gt;<br>&nbsp;&nbsp;&nbsp;&lt;script src="app.js"&gt;&lt;/script&gt;<br>&lt;/html&gt;</code></pre>
+                    </div>
+                    <p id="code-input-css" spellcheck="false" oninput="//compileCode();" contenteditable>
+                        body {<br/><br/>
+                        }
+                    </p>
+                    <p id="code-input-js" spellcheck="false" oninput="//compileCode();" contenteditable></p>
+                </div>
+                <div id="horizontal-preview">
+                    <iframe id="horizontal-preview-area"></iframe>
+                </div>
             </div>
         </div>
         <div id="right-nav-spot"></div>
@@ -160,13 +257,13 @@
             <div id="presets-tab-contents">
                 <div id="favicon-preset-container">
                     <div id="favicon-preset-top">
-                        <img src="google-code-favicon.PNG" alt="Favicon" id="favicon-img">
+                        <img src="assets/google-code-favicon.PNG" alt="Favicon" id="favicon-img">
                         <p id="favicon-preset-title">Add A Favicon (.ico)</p>
                     </div>
                     <br/>
                     <div id="favicon-preset-bottom">
                         <div id="favicon-img-display">
-                            <img id="favicon-img-display-img" height="70px" src="" alt="Preview">
+                            <img id="favicon-img-display-img" height="70px" src="" alt="Preview" draggable="false">
                             <p id="favicon-default-text">Favicon will display here</p>
                         </div>
                         <div id="favicon-file-upload">
@@ -177,31 +274,91 @@
                     </div>
                 </div>
                 <hr class="top-nav-divider-line" id="divider-2"/>
-                <!--<div id="layout-container">
+                <div id="layout-container">
                     <div id="layout-title-container">
                         <svg version="1.1" id="layout-icon" xmlns="http://www.w3.org/2000/svg" class="cwIsqe" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" focusable="false" enable-background="new 0 0 24 24" xml:space="preserve"><path d="M4,5v13h17V5H4z M6,16V7h3v9H6z M11,16v-3.5h3V16H11z M19,16h-3v-3.5h3V16z M11,10.5V7h8v3.5H11z"></path><path fill="none" d="M0,0h24v24H0V0z"></path></svg>
                         <p id="layout-title">Layouts</p>
                     </div>
                     <div id="layout-cards">
-                        <div id="layout-1">
-                            <svg width="108px" height="74px" viewBox="0 0 108 74" version="1.1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><rect id="path-1" x="0" y="0" width="44" height="34"></rect></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="winner-copy-5" transform="translate(-58.000000, -283.000000)"><g id="Group-11" transform="translate(58.000000, 236.000000)"><g id="Group-13" transform="translate(0.000000, 47.000000)"><path d="M0,0.990129262 C0,0.44329597 0.446521291,0 1.00019413,0 L106.999806,0 C107.552198,0 108,0.453369457 108,0.990129262 L108,73.0098707 C108,73.556704 107.553479,74 106.999806,74 L1.00019413,74 C0.447802166,74 0,73.5466305 0,73.0098707 L0,0.990129262 Z" id="Rectangle-47"></path><g id="Group-4" transform="translate(8.000000, 20.000000)"><g id="Rectangle-122"><use fill="#FDFDFD" fill-rule="evenodd" xlink:href="#path-1"></use><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="43" height="33"></rect></g><g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="17.7304061 16.4633821 19.6563122 18.4540679 24.0304259 12 30.2857143 22 14 22"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="17.4285714" cy="11.7142857" r="1.71428571"></circle></g></g><rect id="Rectangle-122" fill="#9E9E9E" x="57" y="23" width="39" height="2"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="31" width="43" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="36" width="43" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="41" width="22.5599995" height="1"></rect></g></g></g></g></svg>
+                        <div id="layout-1" class="layout">
+                            <svg id="layout-1-icon" class="layout-icon" width="108px" height="74px" viewBox="0 0 108 74" version="1.1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><rect id="path-1" x="0" y="0" width="44" height="34"></rect></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="winner-copy-5" transform="translate(-58.000000, -283.000000)"><g id="Group-11" transform="translate(58.000000, 236.000000)"><g id="Group-13" transform="translate(0.000000, 47.000000)"><path d="M0,0.990129262 C0,0.44329597 0.446521291,0 1.00019413,0 L106.999806,0 C107.552198,0 108,0.453369457 108,0.990129262 L108,73.0098707 C108,73.556704 107.553479,74 106.999806,74 L1.00019413,74 C0.447802166,74 0,73.5466305 0,73.0098707 L0,0.990129262 Z" id="Rectangle-47"></path><g id="Group-4" transform="translate(8.000000, 20.000000)"><g id="Rectangle-122"><use fill="none" fill-rule="evenodd" xlink:href="#path-1"></use><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="43" height="33"></rect></g><g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="17.7304061 16.4633821 19.6563122 18.4540679 24.0304259 12 30.2857143 22 14 22"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="17.4285714" cy="11.7142857" r="1.71428571"></circle></g></g><rect id="Rectangle-122" fill="#9E9E9E" x="57" y="23" width="39" height="2"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="31" width="43" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="36" width="43" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="57" y="41" width="22.5599995" height="1"></rect></g></g></g></g></svg>
+                        </div>
+                        <div id="layout-2" class="layout">
+                            <svg id="layout-2-icon" class="layout-icon" width="108px" height="74px" viewBox="0 0 108 74" version="1.1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><rect id="path-1" x="0" y="0" width="44" height="26"></rect><rect id="path-2" x="0" y="0" width="44" height="34"></rect><rect id="path-3" x="0" y="0" width="44" height="34"></rect></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="winner-copy-5" transform="translate(-174.000000, -283.000000)"><g id="Group-11" transform="translate(58.000000, 236.000000)"><g id="Group-14" transform="translate(116.000000, 47.000000)"><path d="M0,0.990129262 C0,0.44329597 0.446521291,0 1.00019413,0 L106.999806,0 C107.552198,0 108,0.453369457 108,0.990129262 L108,73.0098707 C108,73.556704 107.553479,74 106.999806,74 L1.00019413,74 C0.447802166,74 0,73.5466305 0,73.0098707 L0,0.990129262 Z" id="Rectangle-47"></path><rect id="Rectangle-122" fill="#9E9E9E" x="11" y="51" width="39" height="2"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="11" y="59" width="39" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="15" y="64" width="30" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="59" y="59" width="39" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="63" y="64" width="30" height="1"></rect><g id="Group-4" transform="translate(8.000000, 10.000000)"><g id="Rectangle-122"><use fill="none" fill-rule="evenodd" xlink:href="#path-1"></use><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="43" height="25"></rect></g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="17.7304061 13.4633821 19.6563122 15.4540679 24.0304259 9 30.2857143 19 14 19"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="17.4285714" cy="8.71428571" r="1.71428571"></circle></g><g id="Group-4" transform="translate(8.000000, 10.000000)"><g id="Rectangle-122"><use fill="none" fill-rule="evenodd" xlink:href="#path-2"></use><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="43" height="33"></rect></g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="17.7304061 16.4633821 19.6563122 18.4540679 24.0304259 12 30.2857143 22 14 22"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="17.4285714" cy="11.7142857" r="1.71428571"></circle></g><g id="Group-4" transform="translate(56.000000, 10.000000)"><g id="Rectangle-122"><use fill="none" fill-rule="evenodd" xlink:href="#path-3"></use><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="43" height="33"></rect></g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="17.7304061 16.4633821 19.6563122 18.4540679 24.0304259 12 30.2857143 22 14 22"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="17.4285714" cy="11.7142857" r="1.71428571"></circle></g><rect id="Rectangle-122" fill="#9E9E9E" x="59" y="51" width="39" height="2"></rect></g></g></g></g></svg>
+                        </div>
+                        <div id="layout-3" class="layout">
+                            <svg id="layout-3-icon" class="layout-icon" width="108px" height="74px" viewBox="0 0 108 74" version="1.1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M38,11 L100,11 L100,63 L38,63 L38,11 Z" id="path-1"></path><rect id="path-3" x="38" y="11" width="62" height="52"></rect><rect id="path-4" x="0" y="0" width="22" height="22"></rect><rect id="path-5" x="0" y="0" width="22" height="22"></rect></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="winner-copy-5" transform="translate(-174.000000, -447.000000)"><g id="Group-5" transform="translate(174.000000, 447.000000)"><g id="Group-8"><g id="Group" transform="translate(60.000000, 29.000000)" fill="#757575"><polygon id="Rectangle-624" points="4.41234793 7.20876695 6.69032187 9.5318973 11.8640512 2 19.2628458 13.6700001 0 13.6700001"></polygon><circle id="Oval-10" cx="4" cy="2" r="2"></circle></g><g id="Rectangle"><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="38.5" y="11.5" width="61" height="51"></rect></g><g id="Group" transform="translate(60.000000, 29.000000)" fill="#757575"><polygon id="Rectangle-624" points="4.41234793 7.20876695 6.69032187 9.5318973 11.8640512 2 19.2628458 13.6700001 0 13.6700001"></polygon><circle id="Oval-10" cx="4" cy="2" r="2"></circle></g><g id="Group-21" transform="translate(8.000000, 11.000000)"><g id="Rectangle"><use fill="none" fill-rule="evenodd" xlink:href="#path-4"></use><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="21" height="21"></rect></g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="7.67824028 10.1243675 9.06094211 11.5178475 12.2013314 7 16.6923077 14 5 14"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="7.23076923" cy="7.23076923" r="1.23076923"></circle></g><g id="Group-21" transform="translate(8.000000, 41.000000)"><g id="Rectangle"><use fill="none" fill-rule="evenodd" xlink:href="#path-5"></use><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="21" height="21"></rect></g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="7.67824028 10.1243675 9.06094211 11.5178475 12.2013314 7 16.6923077 14 5 14"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="7.23076923" cy="7.23076923" r="1.23076923"></circle></g></g></g></g></g></svg>
+                        </div>
+                        <div id="layout-4" class="layout">
+                            <svg id="layout-4-icon" class="layout-icon" width="108px" height="74px" viewBox="0 0 108 74" version="1.1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><rect id="path-1" x="0" y="0" width="24" height="24"></rect><rect id="path-2" x="0" y="0" width="24" height="24"></rect><rect id="path-3" x="0" y="0" width="24" height="24"></rect><path d="M0,0.990129262 C0,0.44329597 0.446521291,0 1.00019413,0 L106.999806,0 C107.552198,0 108,0.453369457 108,0.990129262 L108,73.0098707 C108,73.556704 107.553479,74 106.999806,74 L1.00019413,74 C0.447802166,74 0,73.5466305 0,73.0098707 L0,0.990129262 Z" id="rect-1"></path></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="winner-copy-5" transform="translate(-174.000000, -365.000000)"><g id="Group-11" transform="translate(58.000000, 236.000000)"><g id="Group-17" transform="translate(116.000000, 129.000000)"><g id="Rectangle-47"><use fill-opacity="0" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#rect-1"></use></g><g id="Group-3" transform="translate(8.000000, 13.000000)"><g id="Rectangle-122"><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="23" height="23"></rect></g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="8.67824028 12.1243675 10.0609421 13.5178475 13.2013314 9 17.6923077 16 6 16"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="8.46153846" cy="8.23076923" r="1.23076923"></circle></g><rect id="Rectangle-122" fill="#9E9E9E" x="8" y="43" width="24" height="2"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="8" y="51" width="24" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="8" y="56" width="24" height="1"></rect><g id="Group-3" transform="translate(42.000000, 13.000000)"><g id="Rectangle-122"><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="23" height="23"></rect></g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="8.67824028 12.1243675 10.0609421 13.5178475 13.2013314 9 17.6923077 16 6 16"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="8.46153846" cy="8.23076923" r="1.23076923"></circle></g><rect id="Rectangle-122" fill="#9E9E9E" x="42" y="43" width="24" height="2"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="42" y="51" width="24" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="42" y="56" width="24" height="1"></rect><g id="Group-3" transform="translate(76.000000, 13.000000)"><g id="Rectangle-122"><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="23" height="23"></rect></g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="8.67824028 12.1243675 10.0609421 13.5178475 13.2013314 9 17.6923077 16 6 16"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="8.46153846" cy="8.23076923" r="1.23076923"></circle></g><rect id="Rectangle-122" fill="#9E9E9E" x="76" y="43" width="24" height="2"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="76" y="51" width="24" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="76" y="56" width="24" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="11" y="61" width="18" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="45" y="61" width="18" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="79" y="61" width="18" height="1"></rect></g></g></g></g></svg>
+                        </div>
+                        <div id="layout-5" class="layout">
+                            <svg id="layout-5-icon" class="layout-icon" width="108px" height="74px" viewBox="0 0 108 74" version="1.1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><rect id="path-1" x="0" y="0" width="18" height="18"></rect><rect id="path-2" x="0" y="0" width="18" height="18"></rect></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="L-to-R" transform="translate(-58.000000, -365.000000)"><g id="Group-11" transform="translate(58.000000, 236.000000)"><g id="Group-15" transform="translate(0.000000, 129.000000)"><path d="M0,0.990129262 C0,0.44329597 0.446521291,0 1.00019413,0 L106.999806,0 C107.552198,0 108,0.453369457 108,0.990129262 L108,73.0098707 C108,73.556704 107.553479,74 106.999806,74 L1.00019413,74 C0.447802166,74 0,73.5466305 0,73.0098707 L0,0.990129262 Z" id="Rectangle-47"></path><g id="Group-21" transform="translate(8.000000, 26.000000)"><g id="Rectangle"><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="17" height="17"></rect></g><g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="7.10037841 8.28357339 8.23167991 9.42369344 10.8010893 5.72727273 14.4755245 11.4545455 4.90909091 11.4545455"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="6.73426573" cy="5.91608392" r="1.00699301"></circle></g></g><rect id="Rectangle-122" fill="#9E9E9E" x="30" y="28" width="15" height="2"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="30" y="36" width="20" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="30" y="41" width="20" height="1"></rect><g id="Group-21" transform="translate(57.000000, 26.000000)"><g id="Rectangle"><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="17" height="17"></rect></g><g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="7.10037841 8.28357339 8.23167991 9.42369344 10.8010893 5.72727273 14.4755245 11.4545455 4.90909091 11.4545455"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="6.73426573" cy="5.91608392" r="1.00699301"></circle></g></g><rect id="Rectangle-122" fill="#9E9E9E" x="80" y="28" width="15" height="2"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="80" y="36" width="20" height="1"></rect><rect id="Rectangle-122" fill="#E0E0E0" x="80" y="41" width="20" height="1"></rect></g></g></g></g></svg>
+                        </div>
+                        <div id="layout-6" class="layout">
+                            <svg id="layout-6-icon" class="layout-icon" width="108px" height="74px" viewBox="0 0 108 74" version="1.1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><rect id="path-1" x="0" y="0" width="22" height="22"></rect><rect id="path-2" x="0" y="0" width="22" height="22"></rect><rect id="path-3" x="0" y="0" width="22" height="22"></rect><rect id="path-4" x="0" y="0" width="22" height="22"></rect></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="L-to-R" transform="translate(-58.000000, -447.000000)"><g id="Group-5" transform="translate(58.000000, 447.000000)"><path d="M0,0.990129262 C0,0.44329597 0.446521291,0 1.00019413,0 L106.999806,0 C107.552198,0 108,0.453369457 108,0.990129262 L108,73.0098707 C108,73.556704 107.553479,74 106.999806,74 L1.00019413,74 C0.447802166,74 0,73.5466305 0,73.0098707 L0,0.990129262 Z" id="Rectangle-47"></path><g id="Group-10" transform="translate(5.000000, 24.000000)"><g id="Group-6"><g id="Group-21"><g id="Rectangle"><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="21" height="21"></rect></g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="7.67824028 10.1243675 9.06094211 11.5178475 12.2013314 7 16.6923077 14 5 14"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="7.23076923" cy="7.23076923" r="1.23076923"></circle></g><g id="Group-21" transform="translate(50.000000, 0.000000)"><g id="Rectangle"><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="21" height="21"></rect></g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="7.67824028 10.1243675 9.06094211 11.5178475 12.2013314 7 16.6923077 14 5 14"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="7.23076923" cy="7.23076923" r="1.23076923"></circle></g><g id="Group-21" transform="translate(75.000000, 0.000000)"><g id="Rectangle"><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="21" height="21"></rect></g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="7.67824028 10.1243675 9.06094211 11.5178475 12.2013314 7 16.6923077 14 5 14"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="7.23076923" cy="7.23076923" r="1.23076923"></circle></g><rect id="Rectangle-2" fill="#9E9E9E" x="5" y="25" width="12" height="1"></rect><rect id="Rectangle-2" fill="#9E9E9E" x="30" y="25" width="12" height="1"></rect><rect id="Rectangle-2" fill="#9E9E9E" x="55" y="25" width="12" height="1"></rect><rect id="Rectangle-2" fill="#9E9E9E" x="80" y="25" width="12" height="1"></rect><g id="Group-21" transform="translate(25.000000, 0.000000)"><g id="Rectangle"><rect stroke-opacity="0.2" stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="21" height="21"></rect></g><polygon id="Rectangle-624" fill="#666666" fill-rule="evenodd" points="7.67824028 10.1243675 9.06094211 11.5178475 12.2013314 7 16.6923077 14 5 14"></polygon><circle id="Oval-10" fill="#666666" fill-rule="evenodd" cx="7.23076923" cy="7.23076923" r="1.23076923"></circle></g></g></g></g></g></g></svg>
                         </div>
                     </div>
-                </div>-->
+                </div>
+            </div>
+            <div id="git-version-container">
+                <div id="git-shader">
+                    <div id="git-title-container">
+                        <div id="git-title-left">
+                            <i class="fas fa-code-branch" id="git-icon"></i>
+                            <p id="git-title">Git Versioning <span id="git-beta"> Beta</span></p>
+                        </div>
+                        <p id="git-exit">&times;</p>
+                    </div>
+                    <div id="git-intro-container">
+                        <button class="new-repository-button">Initialize a new repository</button>
+                        <p id="git-or">- or -</p>
+                        <button class="old-repository-button">Connect an existing repository</button>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="terminal-container">
+            <div id="terminal-area">
+                <div id="terminal-input" contenteditable><span class="terminal-line">cd "../My Project/index.html"</span></div>
+            </div>
+            <div id="terminal-controls">
+            </div>
         </div>
     </main>
     <div id="preview-inpage-container" title="Terminal - Work In Progress">
         <i class="fas fa-terminal" id="preview-inpage"></i>
     </div>
-    <script src="/assets/js/rainbow.js"></script>
-    <script src="/assets/js/language/generic.js"></script>
-    <script src="/assets/js/language/html.js"></script>
+    <div id="preview-trial">
+        <div id="preview-container-2">
+            <iframe id="preview-area"></iframe>
+        </div>
+        <div id="controls-container">
+            <input onclick="phoneClicked(); tabletClicked(); computerClicked();" type="radio" name="orientation" id="phone-input">
+            <label for="phone-input" id="phone-container">
+                <svg id="phone" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 21H7v-1h10v1zm0-3H7V6h10v12zM7 4V3h10v1H7z"></path></svg>
+            </label>
+            <input onclick="phoneClicked(); tabletClicked(); computerClicked();" type="radio" name="orientation" id="tablet-input">
+            <label for="tablet-input" id="tablet-container">
+                <svg id="tablet" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M1.01 6L1 18c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H3c-1.1 0-1.99.9-1.99 2zM21 6v12h-1V6h1zm-3 0v12H6V6h12zM4 18H3V6h1v12z"></path></svg>
+            </label>
+            <input onclick="phoneClicked(); tabletClicked(); computerClicked();" type="radio" name="orientation" id="computer-input">
+            <label for="computer-input" id="computer-container">
+                <svg id="computer" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2M4 6h16v10H4V6zm.67 13H1v2h22v-2h-3.67"></path></svg>
+            </label>
+            <span id="divider"></span>
+            <div id="report-container">
+                <svg id="report-problem" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"></path><path d="M11 5h2v6h-2zm0 8h2v2h-2z"></path></svg>
+            </div>
+            <div id="refresh-container">
+                <i class="fas fa-sync-alt" id="refresh"></i>
+            </div>
+            <p id="exit">&times;</p>
+        </div>
+    </div>
 </body>
 <script src="app.js"></script> <!-- Main Javascript File - Animations/Basic Functionality -->
 <script src="undoRedo.js"></script> <!-- Undo and Redo functionality -->
 <script src="compile.js"></script> <!-- Personal syntax highlighting -->
-<script src="editorSetup.js"></script> <!-- Ace syntax highlighting -->
+<script src="preview.js"></script>
 </html>

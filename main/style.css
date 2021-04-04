@@ -108,7 +108,6 @@ header {
 }
 
 #collab-history-container {
-    background-color: white;
     border-radius: 50%;
     padding: 12px 15px;
     cursor: pointer;
@@ -123,7 +122,6 @@ header {
 }
 
 .icon-container {
-    background-color: white;
     border-radius: 3px;
     padding: 3px 4px;
     cursor: pointer;
@@ -187,7 +185,6 @@ header {
 }
 
 #comment-container {
-    background-color: white;
     border-radius: 50%;
     padding: 12px 14px;
     cursor: pointer;
@@ -203,8 +200,7 @@ header {
 
 #code-area {
     display: flex;
-    justify-content: center;
-    width: 115%;
+    width: 100%;
     overflow: auto;
     height: 100%;
 }
@@ -212,13 +208,14 @@ header {
 #code-input {
     resize: none;
     width: 100%;
-    height: 80vh;
+    max-width: 800px;
+    height: 100%;
     outline: none;
     border: none;
     padding: 45px;
     background-color: rgb(245, 245, 245);
-    font-family: "Lucida Grande",Verdana;
-    font-size: .85rem;
+    font-family: monospace;
+    font-size: 1.15rem;
 }
 
 #top-row {
@@ -230,11 +227,11 @@ header {
 
 .divider {
     height: 1px;
-    width: 102%;
+    width: 105%;
     background-color: lightgrey;
     border: none;
     margin-top: 5px;
-    margin-left: -10px;
+    margin-left: -15px;
 }
 
 #bottom-row {
@@ -335,7 +332,6 @@ header {
     border: 1px solid rgb(177, 177, 177);
     border-radius: 5px;
     box-shadow: 0.5px 0.5px 2px rgb(177, 177, 177);
-    background-color: rgb(245, 245, 245);
 }
 
 #preview-inpage-container i {
@@ -345,7 +341,6 @@ header {
 }
 
 #preview-container {
-    background-color: white;
     border-radius: 50%;
     padding: 6px 10px;
     cursor: pointer;
@@ -402,11 +397,9 @@ main {
     left: 0%;
     bottom: 0%;
     border-top: 1px solid rgb(177, 177, 177);
-}
-
-#terminal-top-divider {
-    margin-top: 0px;
-    margin-left: -23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes terminalUp {
@@ -508,7 +501,7 @@ main {
 
 #presets-underline {
     width: 40px;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .top-nav-divider-line {
@@ -669,14 +662,17 @@ main {
 }
 
 .tab-selected {
-    background-color: rgb(245, 245, 245);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    background-color: rgb(245, 245, 245) !important;
+}
+
+.tab-selected-darkmode {
+    background-color: rgb(95, 95, 95) !important;
 }
 
 .tab-exit {
     font-size: 1.3rem;
     cursor: pointer;
+    color: rgb(95, 95, 95);
 }
 
 #tab-divider-container {
@@ -750,13 +746,13 @@ main {
 }
 
 #favicon-img-display {
-    border: 2px solid rgb(95, 95, 95);
+    border: 2px solid rgb(220, 220, 220);
     height: 75px;
     width: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(95, 95, 95);
+    color: rgb(220, 220, 220);
     font-size: .7rem;
 }
 
@@ -768,6 +764,7 @@ main {
 #favicon-img-display-img {
     max-width: 135px;
     display: none;
+    cursor: grab;
 }
 
 #favicon-filename {
@@ -791,4 +788,500 @@ main {
 
 .attribute-namePreset {
     color: red;
+}
+
+/* STUFF HERE */
+
+#preview-container-2 {
+    width: 100%;
+    height: 100%;
+    transition: width .5s, height .5s;
+    padding: 0px;
+}
+
+#preview-area {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0.5px 0.5px 8px darkgrey;
+    background-color: white;
+}
+
+#controls-container {
+    background-color: black;
+    position: fixed;
+    bottom: 10%;
+    right: 8%;
+    border-radius: 50px;
+    width: 325px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid darkgray;
+}
+
+#tablet, #phone, #report-problem, #refresh {
+    color: darkgrey;
+    fill: darkgrey;
+    cursor: pointer;
+}
+
+#refresh-container {
+    transform: scale(1.5);
+}
+
+#exit {
+    font-size: 2.25rem;
+    color: #FF914D;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#computer {
+    fill: white;
+    cursor: pointer;
+}
+
+#divider {
+    background-color: white;
+    height: 40%;
+    width: 1px;
+}
+
+#controls-container svg:hover {
+    color: rgb(236, 236, 236);
+    fill: rgb(236, 236, 236);
+}
+
+#controls-container i:hover {
+    color: rgb(236, 236, 236);
+    fill: rgb(236, 236, 236);
+}
+
+#controls-container input {
+    display: none;
+}
+
+#preview-trial {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(230, 230, 230);
+    font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: none;
+    color: black;
+}
+
+#code-input-css {
+    resize: none;
+    width: 100%;
+    height: 80vh;
+    outline: none;
+    border: none;
+    padding: 45px;
+    background-color: rgb(245, 245, 245);
+    font-family: "Lucida Grande", Verdana;
+    font-size: .85rem;
+    display: none;
+    color: black;
+}
+
+#code-input-js {
+    resize: none;
+    width: 100%;
+    height: 80vh;
+    outline: none;
+    border: none;
+    padding: 45px;
+    background-color: rgb(245, 245, 245);
+    font-family: "Lucida Grande",Verdana;
+    font-size: .85rem;
+    display: none;
+    color: black;
+}
+
+@keyframes refresh {
+    0% {
+        transform: scale(1.5) rotate(0deg);
+    }
+
+    100% {
+        transform: scale(1.5) rotate(360deg);
+    }
+}
+
+.refreshing {
+    animation-name: refresh;
+    animation-duration: .6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#auto-suggestions {
+    position: absolute;
+    background-color: white;
+    border: 1px solid rgb(95, 95, 95);
+    top: 0%;
+    left: 0%;
+    width: 200px;
+    height: 120px;
+    display: none;
+    border-radius: 5px;
+}
+
+/* LINE NUMBERS - CODE EDITOR */
+
+pre {
+	counter-reset: linecounter;
+}
+pre span.line{
+    counter-increment: linecounter;
+}
+pre span.line:before{
+	content: counter(linecounter);
+	width: 1.3rem;
+	display: inline-block;
+	border-right: 1px solid rgb(95, 95, 95);
+    margin-right: 5px;
+}
+
+/* TERMINAL */
+
+#terminal-area {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#terminal-controls {
+    width: 25%;
+    height: 100%;
+}
+
+#terminal-input {
+    width: 90%;
+    height: 80%;
+    background-color: rgb(245, 245, 245);
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+.terminal-line {
+    font-size: .85rem;
+}
+
+.terminal-line::before {
+    content: 'Tanner Kopel ~ ';
+    color: #FF914D;
+    font-size: .9rem;
+    padding-right: 5px;
+}
+
+#file-dropdown {
+    position: fixed;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0.5px 4.5px 8px darkgray;
+    width: 200px;
+    height: 410px;
+    top: 7%;
+    left: 4.5%;
+    overflow: hidden;
+    display: none;
+    color: black;
+}
+
+.file-item-container {
+    padding: 6px;
+    margin-top: 5px;
+}
+
+.file-item-container:hover {
+    background-color: rgb(245, 245, 245);
+    cursor: pointer;
+}
+
+.file-item {
+    margin-left: 30px;
+    font-size: .9rem;
+}
+
+.shortcut {
+    color: rgb(140, 140, 140);
+    margin-left: 65px;
+    font-weight: bold;
+}
+
+.file-divider {
+    margin-left: 35px;
+    border: none;
+    outline: none;
+    background-color: rgb(220, 220, 220);
+    height: 1px;
+}
+
+#file-share-container, #file-copy-container, #file-version-history-container, #file-publish-container, #file-move-container {
+    margin-bottom: 5px;
+}
+
+#edit-dropdown {
+    position: fixed;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0.5px 4.5px 8px darkgray;
+    width: 350px;
+    height: 218px;
+    top: 7%;
+    left: 7%;
+    overflow: hidden;
+    display: none;
+    color: black;
+}
+
+.edit-item-container {
+    padding: 6px;
+    margin-top: 5px;
+}
+
+.edit-item-container:hover {
+    background-color: rgb(245, 245, 245);
+    cursor: pointer;
+}
+
+.edit-item {
+    margin-left: 30px;
+    font-size: .9rem;
+}
+
+.edit-shortcut {
+    color: rgb(140, 140, 140);
+    margin-left: 220px;
+    font-weight: bold;
+}
+
+.edit-divider {
+    margin-left: 35px;
+    border: none;
+    outline: none;
+    background-color: rgb(220, 220, 220);
+    height: 1px;
+}
+
+#edit-redo-container, #edit-paste-container {
+    margin-bottom: 5px;
+}
+
+#cut-shortcut {
+    margin-left: 230.5px;
+}
+
+#find-shortcut {
+    margin-left: 225px;
+}
+
+#paste-shortcut {
+    margin-left: 216px;
+}
+
+#view-dropdown {
+    position: fixed;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0.5px 4.5px 8px darkgray;
+    width: 230px;
+    height: 255px;
+    top: 7%;
+    left: 9.6%;
+    overflow: hidden;
+    display: none;
+    color: black;
+}
+
+.view-item-container {
+    padding: 6px;
+    margin-top: 5px;
+}
+
+.view-item-container:hover {
+    background-color: rgb(245, 245, 245);
+    cursor: pointer;
+}
+
+.view-item {
+    margin-left: 30px;
+    font-size: .9rem;
+}
+
+.view-shortcut {
+    color: rgb(140, 140, 140);
+    margin-left: 220px;
+    font-weight: bold;
+}
+
+.view-divider {
+    margin-left: 35px;
+    border: none;
+    outline: none;
+    background-color: rgb(220, 220, 220);
+    height: 1px;
+}
+
+#view-mode-container, #view-lightmode-container {
+    margin-bottom: 5px;
+}
+
+#horizontal-preview-area {
+    display: none;
+    background-color: white;
+    border: none;
+    width: 166.5%;
+    height: 92vh;
+}
+
+#horizontal-layout {
+    display: flex;
+    width: 112.75%;
+    height: 88vh;
+}
+
+#layout-title-container {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    width: 75%;
+    padding: 35px 30px;
+    color: rgb(95, 95, 95);
+    fill: rgb(95, 95, 95);
+    font-size: 1.05rem;
+}
+
+#layout-title {
+    margin-left: 10px;
+}
+
+#layout-cards {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 95%;
+    flex-wrap: wrap;
+}
+
+.layout {
+    padding: 8px;
+    border: 1px solid rgb(199, 199, 199);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 80px;
+    margin-top: -8px;
+}
+
+.layout:hover {
+    border: none;
+    box-shadow: 1px 1px 8px rgb(192, 192, 192);
+}
+
+.layout-icon {
+    transform: scale(1.2);
+}
+
+#layout-4, #layout-6 {
+    margin-top: 12px;
+}
+
+#layout-3, #layout-5 {
+    margin-top: 12px;
+}
+
+/* GIT VERSIONING AREA */
+
+#git-version-container {
+    display: none;
+}
+
+#git-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(95, 95, 95);
+    margin: 0 auto;
+    width: 100%;
+    padding: 8px;
+    border-bottom: 1px solid rgb(177, 177, 177);
+}
+
+#git-title-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    color: rgb(95, 95, 95);
+    font-size: 1.15rem;
+}
+
+#git-exit {
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 2px 10px;
+    border-radius: 50%;
+}
+
+#git-exit:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+#git-intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 150px;
+    margin-top: 250px;
+    color: rgb(95, 95, 95);
+    font-size: 1.1rem;
+}
+
+#git-intro-container button {
+    background-color: #FF914D;
+    padding: 10px 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0.5px 0.5px 4px rgb(199, 199, 199);
+}
+
+#git-intro-container button:active {
+    box-shadow: none;
+}
+
+#git-beta {
+    font-size: .85rem;
+    padding: 2px 6px;
+    background-color: rgb(71, 71, 212);
+    color: white;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+#git-icon {
+    display: none;
 }
