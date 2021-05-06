@@ -1,69 +1,3 @@
-/*function wrapLines (el){
-	let text = el.innerText.split('\n');
-    let newText = '<pre>';
-    for (let i = 0; i < text.length; i++) {
-        newText +='<span class="line">' + text[i] + '</span><br>';
-    }
-    console.log(newText + '</pre>');
-    codeInput.innerHTML = newText + '</pre>';
-    placeCaretAtEnd(codeInput);
-}
-
-function wrapLines (el){
-	var text = el.textContent.split('\n');
-	var range = document.createRange();
-	var pointer = 0; // start of text
-	el.textContent.split('\n').forEach(function(line, i){
-		var len = line.length;
-		setBounds (pointer, pointer+len); // sets range to the characters of the line
-		var wrapper = document.createElement('span');
-		wrapper.setAttribute('class', 'line');
-		wrapper.appendChild(range.extractContents()); // pulls the contents of the range out of the document and into wrapper
-		range.insertNode(wrapper); // and put back the wrapped line
-		pointer += len+1; // skip the newline
-	});
-	// now, we're left with a bunch of empty spans/other elements that were split across lines and the browser divided them into three parts (first line, newline character, second line)
-	// those mess up the odd/even calculations. Replace them with plain text.
-	for (var node = el.firstChild; node; node = node.nextSibling){
-		if (node.nodeType != 3 && node.getAttribute('class') != 'line'){
-			var replacement = document.createTextNode(node.textContent);
-			el.replaceChild(replacement, node);
-			node = replacement;
-		}
-	}
-	
-	function setBounds (start, end){
-		// since the browser throws an error if we try to move the beginning past the end (unlike IE, which just adusts the end)
-		// we have to reset the range to cover the entire element, then move the start, then move the end to the start, then move the end
-		range.selectNodeContents(el);
-		moveBoundary (start, 'start');
-		range.collapse (true);
-		moveBoundary (end-start, 'end');
-	}
-	function moveBoundary (n, start){
-		// move the boundary n characters forward, up to the end of the element. Forward only!
-		//  start is 'start' or 'end', and is used to create the appropriate method names ('startContainer' or 'endContainer' etc.)
-		// if the start is moved after the end, then an exception is raised
-		if (n <= 0) return;
-		var startNode = range[start+'Container'];
-		// we may be starting somewhere into the text
-		if (startNode.nodeType == 3) n += range[start+'Offset'];
-		// nodeIterators from http://www.w3.org/TR/DOM-Level-2-Traversal-Range/traversal.html
-		var iter = document.createNodeIterator(el, 4  SHOW_TEXT ), node;
-		while (node = iter.nextNode()){
-			if (startNode.compareDocumentPosition(node) & 2 DOCUMENT_POSITION_PRECEDING) continue;
-			if (n <= node.nodeValue.length){
-				// we found the last character!
-				range[start == 'start' ? 'setStart' :'setEnd'](node, n);
-				return;
-			} else{
-				n -= node.nodeValue.length; // eat these characters
-			}
-		}
-	}
-}
-*/
-
 function getCaretCoordinates() {
     let x = 0,
     y = 0;
@@ -100,10 +34,6 @@ function getCaretIndex(element) {
 } // This function was taken from https://javascript.plainenglish.io/how-to-find-the-caret-inside-a-contenteditable-element-955a5ad9bf81
 
 let suggestionBox = document.getElementById('auto-suggestions');
-
-/*placeCaretAtEnd(codeInput);
-let lineYStart = getCaretCoordinates()[1];
-console.log(lineYStart);*/
 
 function getWordAtCaret(caretIndex) {
     let characters = split(codeInput.innerText);
@@ -149,7 +79,7 @@ function displaySuggestionBox(coordinates) {
     }
 }
 
-/* DIVIDER */
+// ----------------- HTML SYNTAX HIGHLIGHTING -------------------
 
 let firstTime = true;
 
@@ -222,6 +152,21 @@ function colorAttributes(code) {
     return code;
 }
 
+function colorValues(code) {
+    for (let i = 0; i < code.length; i++) {
+        if (code[i] === '"') {
+            let j = 1;
+            let valueName = '';
+            while (code[i + j] !== '"') {
+                valueName += code[i + j];
+                j++;
+            }
+            code.splice(i, valueName.length + 2, '<span class="value-namePreset">"'+valueName+'"</span>');
+        }
+    }
+    return code;
+}
+
 function backToString(code) {
     let newStr = '';
     for (let i = 0; i < code.length; i++) {
@@ -248,27 +193,41 @@ function placeCaretAtEnd(el) {
     }
 } // This function was taken from www.stackoverflow.com
 
-function compileCode() {
-    let textBox = codeInput.innerText;
+function compileHTML(textBox) {
     let characters = split(textBox);
     let removedUnicode = removeUnicode(characters);
     let addOpenClose = colorOpenClose(removedUnicode);
     let addTagNames = colorTagName(addOpenClose);
     let addAttributes = colorAttributes(addTagNames);
-    let newCodeString = backToString(addAttributes);
+    let addValues = colorValues(addAttributes)
+    let newCodeString = backToString(addValues);
 
-    if (newCodeString[newCodeString.length - 1] !== textBox[textBox.length - 1]) {
-        codeInput.innerHTML = newCodeString;
-        placeCaretAtEnd(codeInput);
+    return newCodeString;
+} // This function adds syntax highlighting to HTML code
+
+// --------------- CSS SYNTAX HIGHLIGHTING -----------------
+
+function colorSelectors(code) {
+    for (let i = 0; i < code.length; i++) {
+        if (code[i] === '#' || code[i] === '.') {
+            let j = 0;
+            let selectorName = '';
+            while (code[i + j] !== ' ' || code[j + i] !== '{' || j > 20) {
+                selectorName += code[i + j];
+                j++;
+            }
+            code.splice(i, selectorName.length, '<span class="selector-namePreset">'+selectorName+'</span>');
+        }
     }
-    else if (firstTime === true) {
-        codeInput.innerHTML = newCodeString;
-        placeCaretAtEnd(codeInput);
-        firstTime = false;
-    }
+    return code;
 }
 
-codeInput.addEventListener('click', function () {
-    //console.log('Hello world!');
-    //compileCode();
-});
+function compileCSS(cssTextBox) {
+    let cssCharacters = split(cssTextBox);
+    console.log(cssCharacters);
+    let coloredSelectors = colorSelectors(cssCharacters);
+    console.log(coloredSelectors);
+    return coloredSelectors;
+}
+
+// --------------- JS SYNTAX HIGHLIGHTING ------------------

@@ -4,40 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Linking CSS document -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> <!-- Importing font from Google -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/android-chrome-512x512.png"> <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#ec8900">
+    <!--<link class="links" rel="apple-touch-icon" sizes="180x180" href="favicon/android-chrome-512x512.png">--> <!-- Favicon -->
+    <link class="links" id="main-favicon" rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <!--<link class="links" rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">-->
+    <link class="links" rel="manifest" href="favicon/site.webmanifest">
+    <!--<link class="links" rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#ec8900">-->
     <meta name="msapplication-TileColor" content="#ff7b20">
     <meta name="theme-color" content="#ffffff">
-    <script src="https://kit.fontawesome.com/0bb23f7c87.js" crossorigin="anonymous"></script> <!--SVG Icon Kit-->
+    <script src="https://kit.fontawesome.com/0bb23f7c87.js" crossorigin="anonymous"></script> <!--SVG Icon Kit--> <!-- Some SVG tags were taken from Google -->
     <title>Untitled project - Google Code</title>
 </head>
-<body>
+<body onload="setupEditor(); setupEditorCSS(); setupEditorJS();"> <!-- Sets up ACE Syntax Highlighting -->
     <header>
         <div id="top-row">
             <div id="group-1">
-                <a href="pre_file.html" title="Code Home"><img id="logo" src="assets/google-code-logo.PNG" alt="Logo"></a>
+                <a href="pre_file.html" class="tooltip-activator"><img id="logo" src="assets/google-code-logo.PNG" alt="Logo"></a>
+                <span class="tooltip" id="logo-tooltip">Code Home</span>
                 <div id="top-left">
                     <div id="grouping">
-                        <div id="workspace-title-container">
+                        <div id="workspace-title-container" class="tooltip-activator">
                             <span id="workspace-title" spellcheck="false" contenteditable>Untitled project</span>
                         </div>
+                        <span class="tooltip" id="title-tooltip">Rename</span>
                         <div id="top-left-1">
-                            <div id="star-icon-container" class="icon-container" title="Star">
+                            <div id="star-icon-container" class="icon-container tooltip-activator">
                                 <i class="far fa-star" id="star-icon"></i>
                             </div>
-                            <div id="folder-icon-container" class="icon-container" title="Move">
+                            <span class="tooltip" id="star-tooltip">Star</span>
+                            <div id="folder-icon-container" class="icon-container tooltip-activator">
                                 <i class="far fa-folder-open" id="folder-icon"></i>
                             </div>
-                            <div id="cloud-icon-container" class="icon-container" title="File Status">
+                            <span class="tooltip" id="move-tooltip">Move</span>
+                            <div id="cloud-icon-container" class="icon-container tooltip-activator">
                                 <i class="fas fa-cloud-download-alt" id="cloud-icon"></i>
                                 <p id="saved-message">Saving...</p>
                             </div>
+                            <span class="tooltip" id="status-tooltip">Project status</span>
                         </div>
                     </div>
                     <nav>
@@ -112,7 +117,24 @@
                                     <p id="view-print-layout" class="view-item">Print layout</p>
                                 </div>
                                 <div id="view-mode-container" class="view-item-container">
-                                    <p id="view-mode" class="view-item">Mode</p>
+                                    <p id="view-mode" class="view-item">Change Theme <i id="mode-icon" class="fas fa-caret-right"></i></p>
+                                </div>
+                                <div id="change-theme-container">
+                                    <div id="theme1" class="theme-container">
+                                        <p class="theme-item">Chrome</p>
+                                    </div>
+                                    <div id="theme2" class="theme-container">
+                                        <p class="theme-item">Dreamweaver</p>
+                                    </div>
+                                    <div id="theme3" class="theme-container">
+                                        <p class="theme-item">Eclipse</p>
+                                    </div>
+                                    <div id="theme4" class="theme-container">
+                                        <p class="theme-item">iplastic</p>
+                                    </div>
+                                    <div id="theme5" class="theme-container">
+                                        <p class="theme-item">Github</p>
+                                    </div>
                                 </div>
                                 <hr class="view-divider"/>
                                 <div id="view-horizontal-container" class="view-item-container">
@@ -135,32 +157,52 @@
                             <button id="tools-button" class="nav-button">Tools</button>
                             <button id="help-button" class="nav-button">Help</button>
                         </div>
-                        <p id="version-history-link">Last edit was 2 seconds ago</p>
+                        <p id="version-history-link" class="tooltip-activator">Last edit was 2 seconds ago</p>
+                        <span class="tooltip" id="version-tooltip">Open Version History</span>
                     </nav>
                 </div>
             </div>
             <div id="group-2">
-                <div id="undo-container" title="Undo">
+                <div id="undo-container" class="tooltip-activator" onclick="">
                     <svg id="undo" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M hhikbc"><path d="M14.1 8H7.83l2.59-2.59L9 4 4 9l5 5 1.41-1.41L7.83 10h6.27c2.15 0 3.9 1.57 3.9 3.5S16.25 17 14.1 17H7v2h7.1c3.25 0 5.9-2.47 5.9-5.5S17.35 8 14.1 8z"></path></svg>
                 </div>
-                <div id="redo-container" title="Redo">
+                <span class="tooltip" id="undo-tooltip">Undo last action</span>
+                <div id="redo-container" class="tooltip-activator" onclick="">
                     <svg id="redo" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M hhikbc"><path d="M6 13.5C6 11.57 7.75 10 9.9 10h6.27l-2.59 2.59L15 14l5-5-5-5-1.41 1.41L16.17 8H9.9C6.65 8 4 10.47 4 13.5S6.65 19 9.9 19H17v-2H9.9C7.75 17 6 15.43 6 13.5z"></path></svg>
                 </div>
-                <div id="preview-container" title="Preview">
+                <span class="tooltip" id="redo-tooltip">Redo last action</span>
+                <div id="preview-container" class="tooltip-activator">
                     <svg id="preview" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M5 6h16V4H5c-1.1 0-2 .9-2 2v11H1v3h11v-3H5V6zm16 2h-6c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm-1 9h-4v-7h4v7z"></path></svg>
                 </div>
-                <div id="comment-container" title="Dark Mode">
+                <span class="tooltip" id="preview-tooltip">Preview Code</span>
+                <div id="comment-container" class="tooltip-activator">
                     <i class="fas fa-adjust" id="comment"></i>
                 </div>
-                <div id="collab-history-container" title="Git Versioning">
+                <span class="tooltip" id="darkmode-tooltip">Darkmode</span>
+                <div id="collab-history-container" class="tooltip-activator">
                     <i class="fas fa-code-branch" id="collab-history"></i>
                 </div>
-                <div id="share-button" title="Share"><i class="fas fa-lock" id="lock-icon"></i> Share</div>
-                <img id="account-icon" src="https://lh3.googleusercontent.com/ogw/ADGmqu_RkfDgi9V4F4wJJNxngisrJMP0N-42AfJ5cVdU=s32-c-mo" alt="Account Icon" title="Tanner Kopel">
+                <span class="tooltip" id="git-tooltip">Git Version</span>
+                <div id="share-button" class="tooltip-activator"><i class="fas fa-lock" id="lock-icon"></i> Share</div>
+                <span class="tooltip" id="share-tooltip">Share</span>
+                <img id="account-icon" src="https://lh3.googleusercontent.com/ogw/ADGmqu_RkfDgi9V4F4wJJNxngisrJMP0N-42AfJ5cVdU=s32-c-mo" alt="Account Icon" class="tooltip-activator">
+                <span class="tooltip" id="account-tooltip">Google Account<span style="color: rgb(200, 200, 200);"><br>Tanner Kopel<br>tanner@kopelfamily.com</span></span>
             </div>
         </div>
         <hr class="divider"/>
     </header>
+    <!--POPUP-->
+    <div id="delete-popup-container">
+        <div id="popup-top">
+            <h1 id="popup-title">Google Code</h1><p id="popup-exit">&times;</p>
+        </div>
+        <div id="popup-bottom">
+            <h3 id="popup-message">Are you sure you want to delete this file?</h3>
+            <div id="popup-buttons">
+                <button id="popup-yes">Delete</button><button id="popup-no">Cancel</button>
+            </div>
+        </div>
+    </div>
     <main>
         <div id="left-screen">
             <div id="tabs">
@@ -174,28 +216,20 @@
                     <p class="tab-title">style.css</p>
                     <p class="tab-exit" id="style-exit">&times;</p>
                 </div>
-                <!--<div id="tab-divider-container">
-                    <span id="tab-divider"></span>
-                </div>-->
                 <div class="tab-container" id="app-tab">
                     <i class="fab fa-js-square tab-icon"></i>
                     <p class="tab-title">app.js</p>
                     <p class="tab-exit" id="app-exit">&times;</p>
                 </div>
             </div>
+            <div id="tabs-gone-container">
+                <img src="assets/google-code-logo-grayscale.png" alt="Greyscale Logo" id="greyscale-logo" draggable="false">
+            </div>
             <div id="horizontal-layout">
                 <div id="code-area">
-                    <div id="auto-suggestions"></div>
-                    <div id="code-input" spellcheck="false" oninput="displaySuggestionBox(getCaretCoordinates()); //compileCode();//wrapLines(document.getElementById('pre-input'));" contenteditable><pre id="pre-input"><code data-language="html">&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&nbsp;&lt;head&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="style.css"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;&lt;/title&gt;<br>&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br>&nbsp;&nbsp;&nbsp;&lt;body&gt;&lt;/body&gt;<br>&nbsp;&nbsp;&nbsp;&lt;script src="app.js"&gt;&lt;/script&gt;<br>&lt;/html&gt;</code></pre>
-                    </div>
-                    <p id="code-input-css" spellcheck="false" oninput="//compileCode();" contenteditable>
-                        body {<br/><br/>
-                        }
-                    </p>
-                    <p id="code-input-js" spellcheck="false" oninput="//compileCode();" contenteditable></p>
-                </div>
-                <div id="horizontal-preview">
-                    <iframe id="horizontal-preview-area"></iframe>
+                    <div id="code-input"></div>
+                    <div id="code-input-css"></div>
+                    <div id="code-input-js"></div>
                 </div>
             </div>
         </div>
@@ -212,24 +246,32 @@
             <div id="hierarchy-tab-contents">
                 <div id="hierarchy-controls">
                     <div id="controls-row-1">
-                        <div id="add-html-container" title="Add HTML">
+                        <div id="add-html-container">
                             <i class="fab fa-html5" id="html-icon"></i>
                             <p class="control-title">Add HTML</p>
                         </div>
-                        <div id="add-css-container" title="Add CSS">
+                        <div id="add-css-container">
                             <i class="fab fa-css3" id="css-icon"></i>
                             <p class="control-title">Add CSS</p>
                         </div>
                     </div>
                     <div id="controls-row-2">
-                        <div id="add-js-container" title="Add JS">
+                        <div id="add-js-container">
                             <i class="fab fa-js-square" id="js-icon"></i>
                             <p class="control-title">Add JS</p>
                         </div>
-                        <div id="add-folder-container" title="Add Folder">
+                        <div id="add-folder-container">
                             <i class="fas fa-folder-plus" id="folder-icon"></i>
                             <p class="control-title">Add Folder</p>
                         </div>
+                    </div>
+                </div>
+                <hr class="top-nav-divider-line" id="divider-2"/>
+                <div id="image-container">
+                    <div id="upload-image-container">
+                        <i id="image-icon" class="far fa-image"></i>
+                        <label for="file-upload" id="upload-button">Upload Image</label>
+                        <input type="file" style="display: none;" id="file-upload" onchange="addImage()">
                     </div>
                 </div>
                 <hr class="top-nav-divider-line" id="divider-2"/>
@@ -239,6 +281,9 @@
                         <p id="project-folder" class="folder">Untitled project</p>
                     </div>
                     <div class="folder-contents-container">
+                        <div id="image-item-preview">
+                            <img id="image-preview-img" src="" alt="Preview" width="150">
+                        </div>
                         <div class="item-container" id="index-item">
                             <i class="fab fa-html5 item-icon"></i>
                             <p class="item">index.html</p>
@@ -252,6 +297,32 @@
                             <p class="item">app.js</p>
                         </div>
                     </div>
+                    <div id="right-click-hierarchy">
+                        <div class="right-click-hierarchy-selection" id="right-click-hierarchy-rename">
+                            <p>Rename</p>
+                        </div>
+                        <div class="right-click-hierarchy-selection" id="right-click-hierarchy-type">
+                            <p>Change Type</p><i class="fas fa-caret-right"></i>
+                        </div>
+                        <div id="type-container">
+                            <div class="type" id="type-html">
+                                <i class="fab fa-html5"></i><p>HTML</p>
+                            </div>
+                            <div class="type" id="type-css">
+                                <i class="fab fa-css3"></i><p>CSS</p>
+                            </div>
+                            <div class="type" id="type-js">
+                                <i class="fab fa-js-square"></i><p>JS</p>
+                            </div>
+                        </div>
+                        <hr class="right-click-hierarchy-divider"/>
+                        <div class="right-click-hierarchy-selection" id="right-click-hierarchy-delete">
+                            <p>Delete</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="website-button-container">
+                    <button id="website-button">Publish Website</button>
                 </div>
             </div>
             <div id="presets-tab-contents">
@@ -268,7 +339,7 @@
                         </div>
                         <div id="favicon-file-upload">
                             <label for="favicon-file" id="favicon-file-label">Upload</label>
-                            <input type="file" id="favicon-file" name="favicon-file" onchange="previewFile()">
+                            <input type="file" id="favicon-file" name="favicon-file" onchange="previewFile(); linkFavicon(event);">
                             <p id="favicon-filename">Upload .ico file</p>
                         </div>
                     </div>
@@ -300,6 +371,19 @@
                         </div>
                     </div>
                 </div>
+                <hr class="top-nav-divider-line" id="divider-2"/>
+                <br/>
+                <div id="more-presets-container">
+                    <div class="preset-container" id="popup-container">
+                        <img class="preset-icon" src="https://static.thenounproject.com/png/40746-200.png" alt="Popup Icon">
+                        <p class="preset-title">Popup Message</p>
+                    </div>
+                    <div class="preset-container" id="tooltip-container">
+                        <img class="preset-icon" src="https://static.thenounproject.com/png/171320-200.png" alt="Popup Icon">
+                        <p class="preset-title">Information Tooltip</p>
+                    </div>
+                    <button id="preset-library-button">See more presets</button>
+                </div>
             </div>
             <div id="git-version-container">
                 <div id="git-shader">
@@ -317,6 +401,33 @@
                     </div>
                 </div>
             </div>
+            <div id="preset-code-container">
+                <div id="code-title-container">
+                    <div id="code-title-left">
+                        <img id="code-icon" src="#">
+                        <p id="code-title"></p>
+                    </div>
+                    <p id="code-exit">&times;</p>
+                </div>
+                <div id="code-desc-container">
+                    <p id="code-desc">Copy and paste the following code into your project. To change any styling, simply change the css rules below before or after pasting them into your code.</p>
+                </div>
+                <div class="code-container" id="preset-html-container">
+                    <i id="copy-html" class="fas fa-copy tooltip-activator"></i>
+                    <span class="tooltip" id="copy-html-tooltip">Copy HTML</span>
+                    <div class="code" id="preset-html"></div>
+                </div>
+                <div class="code-container" id="preset-css-container">
+                    <i id="copy-css" class="fas fa-copy tooltip-activator"></i>
+                    <span class="tooltip" id="copy-css-tooltip">Copy CSS</span>
+                    <div class="code" id="preset-css"></div>
+                </div>
+                <div class="code-container" id="preset-js-container">
+                    <i id="copy-js" class="fas fa-copy tooltip-activator"></i>
+                    <span class="tooltip" id="copy-js-tooltip">Copy JS</span>
+                    <div class="code" id="preset-js"></div>
+                </div>
+            </div>
         </div>
         <div id="terminal-container">
             <div id="terminal-area">
@@ -326,39 +437,46 @@
             </div>
         </div>
     </main>
-    <div id="preview-inpage-container" title="Terminal - Work In Progress">
+    <div id="preview-inpage-container" class="tooltip-activator">
         <i class="fas fa-terminal" id="preview-inpage"></i>
     </div>
+    <span class="tooltip" id="terminal-tooltip">Terminal</span>
     <div id="preview-trial">
         <div id="preview-container-2">
             <iframe id="preview-area"></iframe>
         </div>
         <div id="controls-container">
             <input onclick="phoneClicked(); tabletClicked(); computerClicked();" type="radio" name="orientation" id="phone-input">
-            <label for="phone-input" id="phone-container">
+            <label for="phone-input" id="phone-container" class="tooltip-activator">
                 <svg id="phone" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 21H7v-1h10v1zm0-3H7V6h10v12zM7 4V3h10v1H7z"></path></svg>
             </label>
+            <span class="tooltip" id="phone-tooltip">Phone</span>
             <input onclick="phoneClicked(); tabletClicked(); computerClicked();" type="radio" name="orientation" id="tablet-input">
-            <label for="tablet-input" id="tablet-container">
+            <label for="tablet-input" id="tablet-container" class="tooltip-activator">
                 <svg id="tablet" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M1.01 6L1 18c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H3c-1.1 0-1.99.9-1.99 2zM21 6v12h-1V6h1zm-3 0v12H6V6h12zM4 18H3V6h1v12z"></path></svg>
             </label>
+            <span class="tooltip" id="tablet-tooltip">Tablet</span>
             <input onclick="phoneClicked(); tabletClicked(); computerClicked();" type="radio" name="orientation" id="computer-input">
-            <label for="computer-input" id="computer-container">
+            <label for="computer-input" id="computer-container" class="tooltip-activator">
                 <svg id="computer" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2M4 6h16v10H4V6zm.67 13H1v2h22v-2h-3.67"></path></svg>
             </label>
+            <span class="tooltip" id="laptop-tooltip">Laptop</span>
             <span id="divider"></span>
-            <div id="report-container">
+            <div id="report-container" class="tooltip-activator">
                 <svg id="report-problem" width="24" height="24" viewBox="0 0 24 24" focusable="false" class=" NMm5M"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"></path><path d="M11 5h2v6h-2zm0 8h2v2h-2z"></path></svg>
             </div>
-            <div id="refresh-container">
+            <span class="tooltip" id="report-tooltip">Report a problem</span>
+            <div id="refresh-container" class="tooltip-activator">
                 <i class="fas fa-sync-alt" id="refresh"></i>
             </div>
-            <p id="exit">&times;</p>
+            <span class="tooltip" id="refresh-tooltip">Refresh</span>
+            <p id="exit" class="tooltip-activator">&times;</p>
+            <span class="tooltip" id="exit-tooltip">Exit Preview</span>
         </div>
     </div>
 </body>
 <script src="app.js"></script> <!-- Main Javascript File - Animations/Basic Functionality -->
-<script src="undoRedo.js"></script> <!-- Undo and Redo functionality -->
-<script src="compile.js"></script> <!-- Personal syntax highlighting -->
-<script src="preview.js"></script>
+<script src="undoRedo.js"></script> <!-- Undo and Redo functionality - COMING SOON -->
+<script src="preview.js"></script> <!-- Javascript for showing preview -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" integrity="sha512-GZ1RIgZaSc8rnco/8CXfRdCpDxRCphenIiZ2ztLy3XQfCbQUSCuk8IudvNHxkRA3oUg6q0qejgN/qqyG1duv5Q==" crossorigin="anonymous"></script> <!-- ACE Syntax Highlighting (I tried to do syntax highlighting on my own, but it is MUCH harder than I thought) -->
 </html>
